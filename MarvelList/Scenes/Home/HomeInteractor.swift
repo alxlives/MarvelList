@@ -6,4 +6,17 @@
 //  Copyright © 2020 Alexandre Abreu. All rights reserved.
 //
 
-import Foundation
+protocol HomeBusinessLogic {
+    
+}
+
+class HomeInteractor: HomeBusinessLogic {
+    
+    private var presenter: HomePresentationLogic
+    private var worker: HomeWorkerProtocol
+
+    init(presenter: HomePresentationLogic, worker: HomeWorkerProtocol) {
+        self.presenter = presenter
+        self.worker = worker
+    }
+}

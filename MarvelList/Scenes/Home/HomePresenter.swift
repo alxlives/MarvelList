@@ -6,4 +6,18 @@
 //  Copyright © 2020 Alexandre Abreu. All rights reserved.
 //
 
-import Foundation
+protocol HomePresentationLogic {
+    
+}
+
+class HomePresenter {
+    private weak var viewController: HomeDisplayLogic?
+    
+    init(viewController: HomeDisplayLogic) {
+        self.viewController = viewController
+    }
+}
+
+extension HomePresenter: HomePresentationLogic {
+    
+}

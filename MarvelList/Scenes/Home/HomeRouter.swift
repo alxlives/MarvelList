@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+protocol HomeRouterProtocol {
+    
+}
+
+class HomeRouter: HomeRouterProtocol {
+    
+}
