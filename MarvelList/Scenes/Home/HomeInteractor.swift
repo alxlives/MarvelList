@@ -7,7 +7,7 @@
 //
 
 protocol HomeBusinessLogic {
-    
+    func getHeroes()
 }
 
 class HomeInteractor: HomeBusinessLogic {
@@ -18,5 +18,15 @@ class HomeInteractor: HomeBusinessLogic {
     init(presenter: HomePresentationLogic, worker: HomeWorkerProtocol) {
         self.presenter = presenter
         self.worker = worker
+    }
+    
+    func getHeroes() {
+
+        worker.getHeroes(onSuccess: { result in
+            self.presenter.presentSuccess(result)
+        }, onFailure: { error in
+            self.presenter.presentError(error)
+        })
+        
     }
 }

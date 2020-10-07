@@ -12,6 +12,10 @@
 		172CE39E252CFAA1009AC42D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 172CE39D252CFAA1009AC42D /* Assets.xcassets */; };
 		172CE3A1252CFAA1009AC42D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 172CE39F252CFAA1009AC42D /* LaunchScreen.storyboard */; };
 		172CE3AC252CFAA2009AC42D /* MarvelListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172CE3AB252CFAA2009AC42D /* MarvelListTests.swift */; };
+		17496D24252DF49D00957667 /* NetworkEncription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17496D23252DF49D00957667 /* NetworkEncription.swift */; };
+		17523A60252D099B00511B45 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17523A5F252D099B00511B45 /* NetworkError.swift */; };
+		17523A62252D09F100511B45 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17523A61252D09F100511B45 /* NetworkManager.swift */; };
+		17523A64252D0B8800511B45 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17523A63252D0B8800511B45 /* NetworkRequest.swift */; };
 		176E7FB9252CFE11007BDCAD /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176E7FB8252CFE11007BDCAD /* HomeRouter.swift */; };
 		176E7FBB252CFE1D007BDCAD /* HomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176E7FBA252CFE1D007BDCAD /* HomeWorker.swift */; };
 		176E7FBD252CFE2F007BDCAD /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176E7FBC252CFE2F007BDCAD /* HomePresenter.swift */; };
@@ -42,6 +46,10 @@
 		172CE3A7252CFAA2009AC42D /* MarvelListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		172CE3AB252CFAA2009AC42D /* MarvelListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListTests.swift; sourceTree = "<group>"; };
 		172CE3AD252CFAA2009AC42D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17496D23252DF49D00957667 /* NetworkEncription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEncription.swift; sourceTree = "<group>"; };
+		17523A5F252D099B00511B45 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		17523A61252D09F100511B45 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		17523A63252D0B8800511B45 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		176E7FB8252CFE11007BDCAD /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		176E7FBA252CFE1D007BDCAD /* HomeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorker.swift; sourceTree = "<group>"; };
 		176E7FBC252CFE2F007BDCAD /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
@@ -94,6 +102,7 @@
 				172CE394252CFAA0009AC42D /* AppDelegate.swift */,
 				172CE396252CFAA0009AC42D /* SceneDelegate.swift */,
 				176E7FB6252CFDFC007BDCAD /* Scenes */,
+				17523A5E252D097A00511B45 /* Network */,
 				172CE39D252CFAA1009AC42D /* Assets.xcassets */,
 				172CE39F252CFAA1009AC42D /* LaunchScreen.storyboard */,
 				172CE3A2252CFAA1009AC42D /* Info.plist */,
@@ -108,6 +117,17 @@
 				172CE3AD252CFAA2009AC42D /* Info.plist */,
 			);
 			path = MarvelListTests;
+			sourceTree = "<group>";
+		};
+		17523A5E252D097A00511B45 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				17523A5F252D099B00511B45 /* NetworkError.swift */,
+				17496D23252DF49D00957667 /* NetworkEncription.swift */,
+				17523A63252D0B8800511B45 /* NetworkRequest.swift */,
+				17523A61252D09F100511B45 /* NetworkManager.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		176E7FB6252CFDFC007BDCAD /* Scenes */ = {
@@ -238,11 +258,15 @@
 				176E7FC7252CFE74007BDCAD /* HomeFactory.swift in Sources */,
 				176E7FB9252CFE11007BDCAD /* HomeRouter.swift in Sources */,
 				176E7FC5252CFE67007BDCAD /* HomeInteractor.swift in Sources */,
+				17496D24252DF49D00957667 /* NetworkEncription.swift in Sources */,
 				172CE395252CFAA0009AC42D /* AppDelegate.swift in Sources */,
 				176E7FBD252CFE2F007BDCAD /* HomePresenter.swift in Sources */,
 				176E7FBB252CFE1D007BDCAD /* HomeWorker.swift in Sources */,
 				176E7FBF252CFE3C007BDCAD /* HomeViewController.swift in Sources */,
 				172CE397252CFAA0009AC42D /* SceneDelegate.swift in Sources */,
+				17523A60252D099B00511B45 /* NetworkError.swift in Sources */,
+				17523A64252D0B8800511B45 /* NetworkRequest.swift in Sources */,
+				17523A62252D09F100511B45 /* NetworkManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
