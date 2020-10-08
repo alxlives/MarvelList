@@ -10,6 +10,7 @@
             <connections>
                 <outlet property="activityIndicator" destination="244-uu-uCX" id="0Dp-JB-Xdw"/>
                 <outlet property="carrousselHolder" destination="neZ-oQ-ba2" id="9hh-6b-6y9"/>
+                <outlet property="heightConstraint" destination="ZxK-9N-KD3" id="SQb-hp-dWE"/>
                 <outlet property="tableView" destination="Nud-18-7rb" id="i43-FL-1Er"/>
                 <outlet property="view" destination="iN0-l3-epB" id="H6O-3R-Ijt"/>
             </connections>
@@ -26,13 +27,13 @@
                         <constraint firstAttribute="height" constant="200" id="ZxK-9N-KD3"/>
                     </constraints>
                 </view>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="244-uu-uCX">
-                    <rect key="frame" x="188.5" y="843" width="37" height="37"/>
-                </activityIndicatorView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nud-18-7rb">
                     <rect key="frame" x="0.0" y="200" width="414" height="696"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="244-uu-uCX">
+                    <rect key="frame" x="188.5" y="843" width="37" height="37"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
@@ -40,9 +41,9 @@
                 <constraint firstAttribute="bottom" secondItem="Nud-18-7rb" secondAttribute="bottom" id="39M-q3-WMP"/>
                 <constraint firstAttribute="trailing" secondItem="Nud-18-7rb" secondAttribute="trailing" id="8FJ-Eh-9qt"/>
                 <constraint firstItem="neZ-oQ-ba2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="GfE-2M-cSE"/>
+                <constraint firstItem="Nud-18-7rb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="200" id="NOe-W6-xbS"/>
                 <constraint firstAttribute="trailing" secondItem="neZ-oQ-ba2" secondAttribute="trailing" id="OPV-5y-3Q6"/>
                 <constraint firstItem="244-uu-uCX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="adE-5u-V51"/>
-                <constraint firstItem="Nud-18-7rb" firstAttribute="top" secondItem="neZ-oQ-ba2" secondAttribute="bottom" id="cw0-nk-N2M"/>
                 <constraint firstItem="Nud-18-7rb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="dza-Cm-2AD"/>
                 <constraint firstItem="neZ-oQ-ba2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="wm2-m9-CtH"/>
             </constraints>

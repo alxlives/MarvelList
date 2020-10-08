@@ -25,6 +25,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
+    
     var isLoadingNextPage = false
     
     func configureInteractor(_ interactor: (HomeBusinessLogic & HomeDataStoreProtocol)?) {
@@ -164,9 +166,13 @@ extension HomeViewController: UIScrollViewDelegate {
         let frameHeight = scrollView.frame.size.height
         let reachingPoint = self.view.frame.size.height - activityIndicator.frame.origin.y
         
+        #warning("pass logic to view")
         if scrollView.contentOffset.y < 0 {
-            scrollView.contentOffset.y = 0
+            let increment = scrollView.contentOffset.y * -1
+            heightConstraint.constant = 200 + increment
             return
+        } else {
+            heightConstraint.constant = 200
         }
                 
         if offset.y > (contentHeight - frameHeight + reachingPoint) && viewModel.hasMore {
