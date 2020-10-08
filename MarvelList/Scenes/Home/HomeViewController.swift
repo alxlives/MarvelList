@@ -61,6 +61,8 @@ extension HomeViewController: HomeDisplayLogic {
         self.model = model
         DispatchQueue.main.async {
             self.setupView()
+            self.tableView.dataSource = self
+            self.tableView.reloadData()
         }
     }
     
@@ -75,4 +77,26 @@ extension HomeViewController: HomeDisplayLogic {
         
     }
 
+}
+
+extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return model?.TableView.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let viewModel = model?.TableView else {
+            return UITableViewCell()
+        }
+        
+        let cell = HomeTableViewCell.instanceFromNib()
+        cell.setupHero(viewModel[indexPath.row])
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
 }

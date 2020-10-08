@@ -64,12 +64,6 @@ class HomeCarrousselView: UIView, UIScrollViewDelegate {
     
 }
 
-extension UIScrollView {
-    var currentPage: Int {
-        return Int((self.contentOffset.x +  (0.5*self.frame.size.width))/self.frame.width)
-    }
-}
-
 extension HomeCarrousselView {
     class func instanceFromNib() -> HomeCarrousselView {
         return UINib(nibName: "HomeCarrousselView", bundle: nil).instantiate(withOwner: self, options: nil).first as! HomeCarrousselView

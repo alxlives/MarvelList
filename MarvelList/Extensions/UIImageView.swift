@@ -11,9 +11,7 @@ import UIKit
 extension UIImageView {
     
     func getDefaultImage() -> UIImage {
-        return UIImage()
-        //  let bundle = Bundle(for: HomeViewController.self)
-        //  self.image = UIImage(named: "defaultProduct", in: bundle, compatibleWith: nil)
+        return UIImage(named: "image_not_available", in: nil, compatibleWith: nil) ?? UIImage()
     }
     
     func load(url: String, completion: @escaping ((_ image: UIImage) -> Void)) {
