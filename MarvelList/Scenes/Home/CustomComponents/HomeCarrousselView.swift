@@ -34,9 +34,9 @@ class HomeCarrousselView: UIView {
         }
         
         scrollView.delegate = self
-        pageControl.numberOfPages = viewModel.Carroussel.count
+        pageControl.numberOfPages = viewModel.carroussel.count
         
-        for hero in viewModel.Carroussel {
+        for hero in viewModel.carroussel {
             let carrousselItem = HomeCarrousselItemView.instanceFromNib()
             stackItems.addArrangedSubview(carrousselItem)
             

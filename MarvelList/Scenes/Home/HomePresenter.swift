@@ -7,7 +7,7 @@
 //
 
 protocol HomePresentationLogic {
-    func presentSuccess(_ response: HomeModels.HomeResponse)
+    func presentSuccess(_ response: HomeModels.HomeResponse, viewModel:HomeModels.HomeViewModel?)
     func presentError(_ error: NetworkError)
 }
 
@@ -21,8 +21,10 @@ class HomePresenter {
 
 extension HomePresenter: HomePresentationLogic {
     
-    func presentSuccess(_ response: HomeModels.HomeResponse) {
-        
+    func presentSuccess(_ response: HomeModels.HomeResponse, viewModel:HomeModels.HomeViewModel?) {
+                
+        let hasMore: Bool = response.data.offset + response.data.count < response.data.total
+
         let heroes: [HomeModels.HomeViewModel.Hero] = response.data.results.map {
             return HomeModels.HomeViewModel.Hero(id: String($0.id),
                                                   name: $0.name,
@@ -30,11 +32,18 @@ extension HomePresenter: HomePresentationLogic {
                                                   thumbUrl: $0.thumbnail.path + "." + $0.thumbnail.extension, image: nil)
         }
         
-        let carrousselHeroes = Array(heroes.prefix(5))
-        let tableViewHeroes = Array(heroes.dropFirst(5))
-        let viewModel = HomeModels.HomeViewModel(Carroussel: carrousselHeroes, TableView: tableViewHeroes)
+        guard var model = viewModel else {
+            let carrousselHeroes = Array(heroes.prefix(5))
+            let tableViewHeroes = Array(heroes.dropFirst(5))
+            let viewModel = HomeModels.HomeViewModel(carroussel: carrousselHeroes, tableView: tableViewHeroes, hasMore: hasMore)
+                   
+            viewController?.displayHeroes(model: viewModel)
+            return
+        }
         
-        viewController?.displayHeroes(model: viewModel)
+        model.tableView.append(contentsOf: heroes)
+        model.hasMore = hasMore
+        viewController?.displayNextPage(model: model)
     }
     
     func presentError(_ error: NetworkError) {

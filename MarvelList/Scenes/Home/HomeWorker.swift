@@ -12,15 +12,13 @@ typealias HomeResponse = ((_ response: HomeModels.HomeResponse) -> Void)
 typealias HomeError = ((_ error: NetworkError) -> Void)
 
 protocol HomeWorkerProtocol {
-    func getHeroes(onSuccess: @escaping HomeResponse, onFailure: @escaping HomeError)
+    func getHeroes(request: HomeRequest, onSuccess: @escaping HomeResponse, onFailure: @escaping HomeError)
 }
 
 class HomeWorker: HomeWorkerProtocol {
     
-    func getHeroes(onSuccess: @escaping HomeResponse, onFailure: @escaping HomeError) {
-                
-        let request = HomeRequest()
-         
+    func getHeroes(request: HomeRequest, onSuccess: @escaping HomeResponse, onFailure: @escaping HomeError) {
+                         
          NetworkManager.request(request, completion: { (result: Result<HomeModels.HomeResponse, NetworkError>) in
             
             switch result {
