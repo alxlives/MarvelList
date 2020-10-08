@@ -12,7 +12,12 @@
 		172CE39E252CFAA1009AC42D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 172CE39D252CFAA1009AC42D /* Assets.xcassets */; };
 		172CE3A1252CFAA1009AC42D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 172CE39F252CFAA1009AC42D /* LaunchScreen.storyboard */; };
 		172CE3AC252CFAA2009AC42D /* MarvelListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172CE3AB252CFAA2009AC42D /* MarvelListTests.swift */; };
+		17394352252F498F00A7D7BA /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17394351252F498F00A7D7BA /* UIImageView.swift */; };
 		17496D24252DF49D00957667 /* NetworkEncription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17496D23252DF49D00957667 /* NetworkEncription.swift */; };
+		17496D27252DFF4100957667 /* HomeCarrousselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17496D26252DFF4100957667 /* HomeCarrousselView.swift */; };
+		17496D29252DFF9500957667 /* HomeCarrousselView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17496D28252DFF9500957667 /* HomeCarrousselView.xib */; };
+		17496D2B252E017500957667 /* HomeCarrousselItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17496D2A252E017500957667 /* HomeCarrousselItemView.swift */; };
+		17496D2D252E018500957667 /* HomeCarrousselItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17496D2C252E018500957667 /* HomeCarrousselItemView.xib */; };
 		17523A60252D099B00511B45 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17523A5F252D099B00511B45 /* NetworkError.swift */; };
 		17523A62252D09F100511B45 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17523A61252D09F100511B45 /* NetworkManager.swift */; };
 		17523A64252D0B8800511B45 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17523A63252D0B8800511B45 /* NetworkRequest.swift */; };
@@ -24,6 +29,9 @@
 		176E7FC5252CFE67007BDCAD /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176E7FC4252CFE67007BDCAD /* HomeInteractor.swift */; };
 		176E7FC7252CFE74007BDCAD /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176E7FC6252CFE74007BDCAD /* HomeFactory.swift */; };
 		176E7FC9252D0046007BDCAD /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 176E7FC8252D0046007BDCAD /* HomeViewController.xib */; };
+		17730771252F40D6000D9E8D /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17496D32252F3DC900957667 /* SnapKit.framework */; };
+		17730772252F40DC000D9E8D /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17496D32252F3DC900957667 /* SnapKit.framework */; };
+		17730773252F40DC000D9E8D /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 17496D32252F3DC900957667 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +44,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		17730774252F40DC000D9E8D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				17730773252F40DC000D9E8D /* SnapKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		172CE391252CFAA0009AC42D /* MarvelList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		172CE394252CFAA0009AC42D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,7 +68,13 @@
 		172CE3A7252CFAA2009AC42D /* MarvelListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		172CE3AB252CFAA2009AC42D /* MarvelListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListTests.swift; sourceTree = "<group>"; };
 		172CE3AD252CFAA2009AC42D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17394351252F498F00A7D7BA /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		17496D23252DF49D00957667 /* NetworkEncription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEncription.swift; sourceTree = "<group>"; };
+		17496D26252DFF4100957667 /* HomeCarrousselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCarrousselView.swift; sourceTree = "<group>"; };
+		17496D28252DFF9500957667 /* HomeCarrousselView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCarrousselView.xib; sourceTree = "<group>"; };
+		17496D2A252E017500957667 /* HomeCarrousselItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCarrousselItemView.swift; sourceTree = "<group>"; };
+		17496D2C252E018500957667 /* HomeCarrousselItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCarrousselItemView.xib; sourceTree = "<group>"; };
+		17496D32252F3DC900957667 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = SOURCE_ROOT; };
 		17523A5F252D099B00511B45 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		17523A61252D09F100511B45 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		17523A63252D0B8800511B45 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
@@ -65,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17730772252F40DC000D9E8D /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17730771252F40D6000D9E8D /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,10 +129,13 @@
 		172CE393252CFAA0009AC42D /* MarvelList */ = {
 			isa = PBXGroup;
 			children = (
+				17496D31252F3DBE00957667 /* Frameworks */,
+				17394350252F496C00A7D7BA /* Extensions */,
 				172CE394252CFAA0009AC42D /* AppDelegate.swift */,
 				172CE396252CFAA0009AC42D /* SceneDelegate.swift */,
 				176E7FB6252CFDFC007BDCAD /* Scenes */,
 				17523A5E252D097A00511B45 /* Network */,
+				17496D2E252E03A200957667 /* Utils */,
 				172CE39D252CFAA1009AC42D /* Assets.xcassets */,
 				172CE39F252CFAA1009AC42D /* LaunchScreen.storyboard */,
 				172CE3A2252CFAA1009AC42D /* Info.plist */,
@@ -117,6 +150,40 @@
 				172CE3AD252CFAA2009AC42D /* Info.plist */,
 			);
 			path = MarvelListTests;
+			sourceTree = "<group>";
+		};
+		17394350252F496C00A7D7BA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				17394351252F498F00A7D7BA /* UIImageView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		17496D25252DFECF00957667 /* CustomComponents */ = {
+			isa = PBXGroup;
+			children = (
+				17496D26252DFF4100957667 /* HomeCarrousselView.swift */,
+				17496D28252DFF9500957667 /* HomeCarrousselView.xib */,
+				17496D2A252E017500957667 /* HomeCarrousselItemView.swift */,
+				17496D2C252E018500957667 /* HomeCarrousselItemView.xib */,
+			);
+			path = CustomComponents;
+			sourceTree = "<group>";
+		};
+		17496D2E252E03A200957667 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		17496D31252F3DBE00957667 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				17496D32252F3DC900957667 /* SnapKit.framework */,
+			);
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 		17523A5E252D097A00511B45 /* Network */ = {
@@ -141,6 +208,7 @@
 		176E7FB7252CFDFC007BDCAD /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				17496D25252DFECF00957667 /* CustomComponents */,
 				176E7FC6252CFE74007BDCAD /* HomeFactory.swift */,
 				176E7FC4252CFE67007BDCAD /* HomeInteractor.swift */,
 				176E7FBC252CFE2F007BDCAD /* HomePresenter.swift */,
@@ -163,6 +231,8 @@
 				172CE38D252CFAA0009AC42D /* Sources */,
 				172CE38E252CFAA0009AC42D /* Frameworks */,
 				172CE38F252CFAA0009AC42D /* Resources */,
+				17496D34252F3EA400957667 /* ShellScript */,
+				17730774252F40DC000D9E8D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -234,8 +304,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17496D2D252E018500957667 /* HomeCarrousselItemView.xib in Resources */,
 				172CE3A1252CFAA1009AC42D /* LaunchScreen.storyboard in Resources */,
 				172CE39E252CFAA1009AC42D /* Assets.xcassets in Resources */,
+				17496D29252DFF9500957667 /* HomeCarrousselView.xib in Resources */,
 				176E7FC9252D0046007BDCAD /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,6 +321,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		17496D34252F3EA400957667 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#/usr/local/bin/carthage copy-frameworks\n#$SRCROOT/Carthage/Build/iOS/Snapkit.framework\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		172CE38D252CFAA0009AC42D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -258,14 +350,17 @@
 				176E7FC7252CFE74007BDCAD /* HomeFactory.swift in Sources */,
 				176E7FB9252CFE11007BDCAD /* HomeRouter.swift in Sources */,
 				176E7FC5252CFE67007BDCAD /* HomeInteractor.swift in Sources */,
+				17496D27252DFF4100957667 /* HomeCarrousselView.swift in Sources */,
 				17496D24252DF49D00957667 /* NetworkEncription.swift in Sources */,
 				172CE395252CFAA0009AC42D /* AppDelegate.swift in Sources */,
 				176E7FBD252CFE2F007BDCAD /* HomePresenter.swift in Sources */,
+				17394352252F498F00A7D7BA /* UIImageView.swift in Sources */,
 				176E7FBB252CFE1D007BDCAD /* HomeWorker.swift in Sources */,
 				176E7FBF252CFE3C007BDCAD /* HomeViewController.swift in Sources */,
 				172CE397252CFAA0009AC42D /* SceneDelegate.swift in Sources */,
 				17523A60252D099B00511B45 /* NetworkError.swift in Sources */,
 				17523A64252D0B8800511B45 /* NetworkRequest.swift in Sources */,
+				17496D2B252E017500957667 /* HomeCarrousselItemView.swift in Sources */,
 				17523A62252D09F100511B45 /* NetworkManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,6 +514,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MarvelList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -436,6 +535,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MarvelList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -454,6 +557,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MarvelListTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -475,6 +582,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MarvelListTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

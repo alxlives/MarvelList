@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 protocol HomeDisplayLogic: class {
     func displayHeroes(model: HomeModels.HomeViewModel)
@@ -19,6 +20,9 @@ class HomeViewController: UIViewController {
     private var router: HomeRouterProtocol?
     private var model: HomeModels.HomeViewModel?
     
+    @IBOutlet weak var carrousselHolder: UIView!
+    @IBOutlet weak var tableView: UITableView!
+        
     func configureInteractor(_ interactor: HomeBusinessLogic) {
         self.interactor = interactor
     }
@@ -32,17 +36,43 @@ class HomeViewController: UIViewController {
         self.title = "Marvel Heroes"
         interactor?.getHeroes()
     }
+    
+    func setupView() {
+        
+        guard let model = self.model else {
+            return
+        }
+        
+        let carrousselView = HomeCarrousselView.instanceFromNib()
+        carrousselHolder.addSubview(carrousselView)
+        
+        carrousselView.snp.makeConstraints{ make in
+            make.margins.equalToSuperview()
+        }
+        
+        carrousselView.model = model
+
+    }
 }
 
 extension HomeViewController: HomeDisplayLogic {
     
     func displayHeroes(model: HomeModels.HomeViewModel) {
         self.model = model
-        print(model.Heroes)
+        DispatchQueue.main.async {
+            self.setupView()
+        }
     }
     
     func displayError(error: NetworkError) {
-        print(error.localizedDescription)
+        
+        let alert = UIAlertController(title: "Erro", message: error.localizedDescription, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Tentar Novamente", style: .default, handler: { action in
+                self.interactor?.getHeroes()
+            })
+        alert.addAction(action)
+        self.present(alert, animated: true)
+        
     }
 
 }

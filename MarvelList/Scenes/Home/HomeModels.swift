@@ -10,10 +10,11 @@ import Foundation
 
 struct HomeModels {
     
-    struct HomeViewModel: Decodable {
-        let Heroes: [Heroe]
+    struct HomeViewModel {
+        let Carroussel: [Heroe]
+        let TableView: [Heroe]
         
-        struct Heroe: Decodable {
+        struct Heroe {
             let id: String
             let name: String
             let description: String

@@ -1,1 +1,1 @@
-github "airbnb/lottie-ios" "master"
+github "SnapKit/SnapKit" ~> 5.0.0

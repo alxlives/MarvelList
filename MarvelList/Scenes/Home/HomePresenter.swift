@@ -30,7 +30,9 @@ extension HomePresenter: HomePresentationLogic {
                                                   thumb: $0.thumbnail.path + "." + $0.thumbnail.extension)
         }
         
-        let viewModel = HomeModels.HomeViewModel(Heroes: heroes)
+        let carrousselHeroes = Array(heroes.prefix(5))
+        let tableViewHeroes = Array(heroes.dropFirst(5))
+        let viewModel = HomeModels.HomeViewModel(Carroussel: carrousselHeroes, TableView: tableViewHeroes)
         
         viewController?.displayHeroes(model: viewModel)
         

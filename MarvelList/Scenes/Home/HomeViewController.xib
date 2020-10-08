@@ -9,6 +9,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="MarvelList" customModuleProvider="target">
             <connections>
+                <outlet property="carrousselHolder" destination="neZ-oQ-ba2" id="9hh-6b-6y9"/>
+                <outlet property="tableView" destination="Nud-18-7rb" id="i43-FL-1Er"/>
                 <outlet property="view" destination="iN0-l3-epB" id="H6O-3R-Ijt"/>
             </connections>
         </placeholder>
@@ -24,10 +26,30 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="neZ-oQ-ba2">
+                    <rect key="frame" x="0.0" y="44" width="414" height="200"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="ZxK-9N-KD3"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nud-18-7rb">
+                    <rect key="frame" x="0.0" y="244" width="414" height="618"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Nud-18-7rb" secondAttribute="bottom" id="39M-q3-WMP"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Nud-18-7rb" secondAttribute="trailing" id="8FJ-Eh-9qt"/>
+                <constraint firstItem="neZ-oQ-ba2" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="GfE-2M-cSE"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="neZ-oQ-ba2" secondAttribute="trailing" id="OPV-5y-3Q6"/>
+                <constraint firstItem="Nud-18-7rb" firstAttribute="top" secondItem="neZ-oQ-ba2" secondAttribute="bottom" id="cw0-nk-N2M"/>
+                <constraint firstItem="Nud-18-7rb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="dza-Cm-2AD"/>
+                <constraint firstItem="neZ-oQ-ba2" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="wm2-m9-CtH"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="139" y="153"/>
+            <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
         </view>
     </objects>
 </document>

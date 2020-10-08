@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HomeCarrousselItemView" customModule="MarvelList" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="215"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CdU-I8-if4">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="215"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eni-c9-CPA">
+                    <rect key="frame" x="32" y="164.5" width="362" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Eni-c9-CPA" secondAttribute="trailing" constant="20" id="4B0-IP-lhH"/>
+                <constraint firstItem="Eni-c9-CPA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="32" id="ERv-Kv-Up7"/>
+                <constraint firstAttribute="bottom" secondItem="CdU-I8-if4" secondAttribute="bottom" id="TUw-UF-ZDN"/>
+                <constraint firstAttribute="trailing" secondItem="CdU-I8-if4" secondAttribute="trailing" id="WMV-dj-7Mz"/>
+                <constraint firstAttribute="top" secondItem="CdU-I8-if4" secondAttribute="top" id="h9K-me-lej"/>
+                <constraint firstItem="CdU-I8-if4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="hUm-Bm-F9i"/>
+                <constraint firstAttribute="bottom" secondItem="Eni-c9-CPA" secondAttribute="bottom" constant="30" id="xAx-6x-hJD"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="imageView" destination="CdU-I8-if4" id="HbS-7i-oZp"/>
+                <outlet property="lblName" destination="Eni-c9-CPA" id="bvT-eU-C8p"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="179.12946428571428"/>
+        </view>
+    </objects>
+</document>
