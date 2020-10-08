@@ -9,38 +9,29 @@
 import UIKit
 
 extension UIImageView {
-    
-    func getDefaultImage() -> UIImage {
-        return UIImage(named: "image_not_available", in: nil, compatibleWith: nil) ?? UIImage()
-    }
-    
-    func load(url: String, completion: @escaping ((_ image: UIImage) -> Void)) {
-        
+
+    func load(url: String, completion: @escaping ((_ image: UIImage?) -> Void)) {
         guard let url = URL(string: url) else {
-            completion(self.getDefaultImage())
+            completion(nil)
             return
         }
-        
         URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) -> Void in
-            
             DispatchQueue.main.async(execute: { () -> Void in
-                
                 if error != nil {
-                    completion(self.getDefaultImage())
+                    completion(nil)
                     return
                 }
-                
                 guard let image = UIImage(data: data!) else {
-                    completion(self.getDefaultImage())
+                    completion(nil)
                     return
                 }
-                
                 completion(image)
-                
             })
-            
         }).resume()
-        
+    }
+    
+    class func getDefaultImage() -> UIImage {
+        return UIImage(named: "image_not_available", in: nil, compatibleWith: nil) ?? UIImage()
     }
     
 }

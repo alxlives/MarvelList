@@ -93,10 +93,24 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         
         let cell = HomeTableViewCell.instanceFromNib()
         cell.setupHero(viewModel[indexPath.row])
+        cell.delegate = self
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+}
+
+extension HomeViewController: HomeTableViewCellProtocol {
+    
+    func imageDidLoad(_ image: UIImage, hero: HomeModels.HomeViewModel.Hero) {
+        
+        if let i = self.model?.TableView.firstIndex(where: { $0.id == hero.id }) {
+            self.model?.TableView[i].image = image
+        }
+        
+    }
+    
+    
 }

@@ -6,19 +6,20 @@
 //  Copyright © 2020 Alexandre Abreu. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct HomeModels {
     
     struct HomeViewModel {
-        let Carroussel: [Heroe]
-        let TableView: [Heroe]
+        let Carroussel: [Hero]
+        var TableView: [Hero]
         
-        struct Heroe {
+        struct Hero {
             let id: String
             let name: String
             let description: String
-            let thumb: String?
+            let thumbUrl: String?
+            var image: UIImage?
         }
     }
     

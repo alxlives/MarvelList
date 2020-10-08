@@ -13,7 +13,7 @@ class HomeCarrousselItemView: UIView {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var lblName: UILabel!
     
-    func setupLayout(hero: HomeModels.HomeViewModel.Heroe) {
+    func setupLayout(hero: HomeModels.HomeViewModel.Hero) {
         
         lblName.text = hero.name
         lblName.layer.shadowColor = UIColor.white.cgColor
@@ -23,9 +23,11 @@ class HomeCarrousselItemView: UIView {
         lblName.layer.masksToBounds = false
         lblName.layer.shouldRasterize = true
         
-        imageView.load(url: hero.thumb ?? "", completion: { (image) in
+        imageView.load(url: hero.thumbUrl ?? "", completion: { (image) in
             self.imageView.alpha = 0
-            self.imageView.image = image
+            
+            let img = image ?? UIImageView.getDefaultImage()
+            self.imageView.image = img
             
             UIView.animate(withDuration: 0.5, animations: {
                 self.imageView.alpha = 1

@@ -9,12 +9,12 @@
 import UIKit
 import SnapKit
 
-class HomeCarrousselView: UIView, UIScrollViewDelegate {
+class HomeCarrousselView: UIView {
     
     @IBOutlet weak var stackItems: UIStackView!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var scrollView: UIScrollView!
-    
+        
     var model: HomeModels.HomeViewModel? {
         didSet {
             self.layoutIfNeeded()
@@ -48,7 +48,10 @@ class HomeCarrousselView: UIView, UIScrollViewDelegate {
             carrousselItem.setupLayout(hero: hero)
         }
     }
-    
+        
+}
+
+extension HomeCarrousselView: UIScrollViewDelegate {
     // MARK: UIScrollViewDelegate
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if decelerate == false {
@@ -61,7 +64,6 @@ class HomeCarrousselView: UIView, UIScrollViewDelegate {
         let currentPage = scrollView.currentPage
         pageControl.currentPage = currentPage
     }
-    
 }
 
 extension HomeCarrousselView {

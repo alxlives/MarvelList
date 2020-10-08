@@ -23,11 +23,11 @@ extension HomePresenter: HomePresentationLogic {
     
     func presentSuccess(_ response: HomeModels.HomeResponse) {
         
-        let heroes: [HomeModels.HomeViewModel.Heroe] = response.data.results.map {
-            return HomeModels.HomeViewModel.Heroe(id: String($0.id),
+        let heroes: [HomeModels.HomeViewModel.Hero] = response.data.results.map {
+            return HomeModels.HomeViewModel.Hero(id: String($0.id),
                                                   name: $0.name,
                                                   description: $0.description,
-                                                  thumb: $0.thumbnail.path + "." + $0.thumbnail.extension)
+                                                  thumbUrl: $0.thumbnail.path + "." + $0.thumbnail.extension, image: nil)
         }
         
         let carrousselHeroes = Array(heroes.prefix(5))
@@ -35,7 +35,6 @@ extension HomePresenter: HomePresentationLogic {
         let viewModel = HomeModels.HomeViewModel(Carroussel: carrousselHeroes, TableView: tableViewHeroes)
         
         viewController?.displayHeroes(model: viewModel)
-        
     }
     
     func presentError(_ error: NetworkError) {
