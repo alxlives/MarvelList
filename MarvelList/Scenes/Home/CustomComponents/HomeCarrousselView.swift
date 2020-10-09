@@ -10,9 +10,12 @@ import UIKit
 import SnapKit
 
 class HomeCarrousselView: UIView {
-
+    //MARK: - Constants
+    private let carrousselTime = 3.0
+    
     //MARK: - Properties
     var model: HomeModels.HomeViewModel
+    private var timer: Timer?
     
     //MARK: - Views
     private lazy var stackItems: UIStackView = {
@@ -78,20 +81,34 @@ extension HomeCarrousselView: ViewCodeProtocol {
                 make.width.equalTo(UIScreen.main.bounds.width)
             }
         }
+        
+        startTimer()
     }
+    
+    func startTimer() {
+        timer = Timer(timeInterval: carrousselTime, repeats: true, block: { _ in
+            self.scrollView.moveToNextPage(onCompletion: {
+                self.pageControl.currentPage = self.scrollView.currentPage
+            })
+        })
+        RunLoop.main.add(timer!, forMode: .common)
+    }
+
 }
     
 extension HomeCarrousselView: UIScrollViewDelegate {
     // MARK: UIScrollViewDelegate
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        timer?.invalidate()
+    }
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if decelerate == false {
-            let currentPage = scrollView.currentPage
-            pageControl.currentPage = currentPage
+            pageControl.currentPage = scrollView.currentPage
         }
     }
     
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let currentPage = scrollView.currentPage
-        pageControl.currentPage = currentPage
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        pageControl.currentPage = scrollView.currentPage
     }
+    
 }

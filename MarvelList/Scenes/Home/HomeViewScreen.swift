@@ -154,7 +154,7 @@ extension HomeViewScreen: UIScrollViewDelegate {
                 make.height.equalTo(carrousselHeight + increment)
             }
             return
-        } else {
+        } else if carrousselView.frame.size.height > carrousselHeight  {
             carrousselView.snp.updateConstraints { make in
                 make.height.equalTo(carrousselHeight)
             }
