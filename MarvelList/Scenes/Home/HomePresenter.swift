@@ -7,6 +7,7 @@
 //
 
 protocol HomePresentationLogic {
+    func presentLoader()
     func presentSuccess(_ response: HomeModels.HomeResponse, viewModel:HomeModels.HomeViewModel?)
     func presentError(_ error: NetworkError)
 }
@@ -20,6 +21,10 @@ class HomePresenter {
 }
 
 extension HomePresenter: HomePresentationLogic {
+    
+    func presentLoader() {
+        viewController?.displayLoader()
+    }
     
     func presentSuccess(_ response: HomeModels.HomeResponse, viewModel:HomeModels.HomeViewModel?) {
         let hasMore: Bool = response.data.offset + response.data.count < response.data.total

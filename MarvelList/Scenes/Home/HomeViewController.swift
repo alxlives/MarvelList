@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 
 protocol HomeDisplayLogic: class {
+    func displayLoader()
     func displayHeroes(model: HomeModels.HomeViewModel)
     func displayNextPage(model: HomeModels.HomeViewModel)
     func displayError(error: NetworkError)
@@ -41,8 +42,9 @@ class HomeViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        CustomLoader.open()
-        interactor?.getHeroes()
+        if self.model == nil {
+            interactor?.getHeroes()
+        }
     }
 
 }
@@ -69,6 +71,10 @@ extension HomeViewController: ViewCodeProtocol {
 }
 
 extension HomeViewController: HomeDisplayLogic {
+
+    func displayLoader() {
+        CustomLoader.open()
+    }
 
     func displayHeroes(model: HomeModels.HomeViewModel) {
         self.model = model
@@ -97,7 +103,11 @@ extension HomeViewController: HomeDisplayLogic {
                 self.interactor?.getHeroes()
             })
         alert.addAction(action)
-        self.present(alert, animated: true)
+        
+        DispatchQueue.main.async {
+            CustomLoader.close()
+            self.present(alert, animated: true)
+        }
     }
 }
 

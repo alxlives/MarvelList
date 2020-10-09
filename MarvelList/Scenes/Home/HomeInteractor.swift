@@ -33,6 +33,9 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStoreProtocol {
     }
     
     func getHeroes() {
+        if homeViewModel == nil {
+            presenter.presentLoader()
+        }
         let request = HomeRequest(offset: currentOffset)
         worker.getHeroes(request: request, onSuccess: { result in
             self.currentOffset = result.data.offset + result.data.count
