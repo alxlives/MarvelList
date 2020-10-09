@@ -9,7 +9,6 @@
 import UIKit
 
 class HomeCarrousselItemView: UIView {
-    
     //MARK: - Properties
     private var hero: HomeModels.HomeViewModel.Hero?
     
@@ -52,7 +51,6 @@ class HomeCarrousselItemView: UIView {
 }
 
 extension HomeCarrousselItemView: ViewCodeProtocol {
-    
     func setupHierarchy() {
         addSubview(imgView)
         addSubview(lblName)
@@ -75,7 +73,6 @@ extension HomeCarrousselItemView {
     
     func loadImage() {
         imgView.load(url: hero?.thumbUrl ?? "", completion: { (image) in
-            
             let img = image ?? UIImageView.getDefaultImage()
             self.imgView.image = img
             

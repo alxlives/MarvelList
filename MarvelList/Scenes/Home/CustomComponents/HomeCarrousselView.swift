@@ -50,8 +50,8 @@ class HomeCarrousselView: UIView {
     }
 }
 
+// MARK: ViewCodeProtocol
 extension HomeCarrousselView: ViewCodeProtocol {
-    
     func setupHierarchy() {
         scrollView.addSubview(stackItems)
         self.addSubview(scrollView)
@@ -96,8 +96,8 @@ extension HomeCarrousselView: ViewCodeProtocol {
 
 }
     
+// MARK: UIScrollViewDelegate
 extension HomeCarrousselView: UIScrollViewDelegate {
-    // MARK: UIScrollViewDelegate
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         timer?.invalidate()
     }

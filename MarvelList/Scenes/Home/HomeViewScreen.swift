@@ -15,7 +15,6 @@ protocol HomeViewScreenProtocol {
 }
 
 class HomeViewScreen: UIView {
-
     //MARK: - Constants
     private let carrousselHeight:CGFloat = 200.0
     
@@ -73,8 +72,8 @@ class HomeViewScreen: UIView {
     }
 }
 
+//MARK: - ViewCodeProtocol
 extension HomeViewScreen: ViewCodeProtocol {
-    
     func setupHierarchy() {
         self.addSubview(activityIndicator)
         self.addSubview(tableView)
@@ -103,7 +102,6 @@ extension HomeViewScreen: ViewCodeProtocol {
         tableView.reloadData()
         activityIndicator.isHidden = !model.hasMore
     }
-
 }
 
 //MARK: - TableViewDataSource / Delegate
@@ -137,7 +135,6 @@ extension HomeViewScreen: HomeTableViewCellProtocol {
 
 //MARK: - ScrollViewDelegate
 extension HomeViewScreen: UIScrollViewDelegate {
-    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard !isLoadingNextPage else {
             return

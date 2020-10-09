@@ -17,7 +17,6 @@ protocol HomeDisplayLogic: class {
 }
 
 class HomeViewController: UIViewController {
-    
     //MARK: - Properties
     private var viewScreen: HomeViewScreen!
     private var interactor: (HomeBusinessLogic & HomeDataStoreProtocol)?
@@ -50,12 +49,9 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: ViewCodeProtocol {
+    func setupHierarchy() { }
     
-    func setupHierarchy() {
-    }
-    
-    func setupConstraints() {
-    }
+    func setupConstraints() { }
     
     func aditionalSetup() {
         self.view.backgroundColor = .white
@@ -67,11 +63,9 @@ extension HomeViewController: ViewCodeProtocol {
             make.edges.equalToSuperview()
         }
     }
-    
 }
 
 extension HomeViewController: HomeDisplayLogic {
-
     func displayLoader() {
         CustomLoader.open()
     }

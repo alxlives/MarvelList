@@ -9,10 +9,8 @@
 
 import UIKit
 
-public struct HomeFactory {
-    private init() {}
-    
-    public static func makeController() -> UIViewController {
+struct HomeFactory {
+    static func makeController() -> UIViewController {
         let viewController = HomeViewController()
         let presenter = HomePresenter(viewController: viewController)
         let worker = HomeWorker()

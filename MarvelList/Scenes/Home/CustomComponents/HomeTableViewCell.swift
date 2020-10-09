@@ -13,7 +13,6 @@ protocol HomeTableViewCellProtocol {
 }
 
 class HomeTableViewCell: UITableViewCell {
-    
     //MARK: - Properties
     private var hero: HomeModels.HomeViewModel.Hero?
     var delegate: HomeTableViewCellProtocol?

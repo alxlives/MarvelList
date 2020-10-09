@@ -63,8 +63,6 @@ class HomeRequest: NetworkRequest {
         let hash = NetworkEncription.MD5(ts+privateKey+publicKey) ?? ""
         let url = baseURL + "?ts=" + ts + "&apikey=" + publicKey + "&hash=" + hash + "&offset=" + offset
         
-        print(url)
-
         self.url = url
     }
     

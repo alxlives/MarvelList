@@ -12,6 +12,7 @@ protocol HomePresentationLogic {
     func presentError(_ error: NetworkError)
 }
 
+//MARK: - Init
 class HomePresenter {
     private weak var viewController: HomeDisplayLogic?
     
@@ -20,8 +21,8 @@ class HomePresenter {
     }
 }
 
+//MARK: - HomePresentationLogic
 extension HomePresenter: HomePresentationLogic {
-    
     func presentLoader() {
         viewController?.displayLoader()
     }

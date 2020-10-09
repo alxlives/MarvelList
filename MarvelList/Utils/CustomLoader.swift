@@ -11,7 +11,6 @@ import SnapKit
 import Lottie
 
 class CustomLoader: UIView {
-    
     static var shared = CustomLoader()
     
     private var animationHolder: UIView = {
