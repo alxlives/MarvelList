@@ -18,30 +18,28 @@ protocol HomeDataStoreProtocol {
 }
 
 class HomeInteractor: HomeBusinessLogic, HomeDataStoreProtocol {
-    
+    //MARK: - Properties
     private var presenter: HomePresentationLogic
     private var worker: HomeWorkerProtocol
 
+    //MARK: - DataStore
     var currentOffset: Int = 0
     var homeViewModel: HomeModels.HomeViewModel?
     
+    //MARK: - Init
     init(presenter: HomePresentationLogic, worker: HomeWorkerProtocol) {
         self.presenter = presenter
         self.worker = worker
     }
     
     func getHeroes() {
-
         let request = HomeRequest(offset: currentOffset)
         worker.getHeroes(request: request, onSuccess: { result in
             self.currentOffset = result.data.offset + result.data.count
-            
-            print(result.data.total)
             self.presenter.presentSuccess(result, viewModel: self.homeViewModel)
         }, onFailure: { error in
             self.presenter.presentError(error)
         })
-        
     }
     
     func setImage(_ image:UIImage, forIndex: Int) {

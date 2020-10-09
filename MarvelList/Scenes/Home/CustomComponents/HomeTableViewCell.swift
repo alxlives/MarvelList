@@ -31,6 +31,7 @@ class HomeTableViewCell: UITableViewCell {
         return lbl
     }()
     
+    //MARK: - Init
     func setupHero(_ hero: HomeModels.HomeViewModel.Hero) {
         self.hero = hero
         setupView()

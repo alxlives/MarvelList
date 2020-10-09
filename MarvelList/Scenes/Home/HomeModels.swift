@@ -50,10 +50,10 @@ struct HomeModels {
 }
 
 class HomeRequest: NetworkRequest {
-    var url: String
-    var baseURL = "https://gateway.marvel.com/v1/public/characters"
-    var publicKey = "d45326ff4b90a16ccedce23966fa08db"
-    var privateKey = "95eb75a248dce98a06fef346e235ab9aa1721d32"
+    internal var url: String
+    private let baseURL = "https://gateway.marvel.com/v1/public/characters"
+    private let publicKey = "d45326ff4b90a16ccedce23966fa08db"
+    private let privateKey = "95eb75a248dce98a06fef346e235ab9aa1721d32"
     
     init (offset:Int) {
         let offset = String(offset)

@@ -22,7 +22,6 @@ class HomePresenter {
 extension HomePresenter: HomePresentationLogic {
     
     func presentSuccess(_ response: HomeModels.HomeResponse, viewModel:HomeModels.HomeViewModel?) {
-                
         let hasMore: Bool = response.data.offset + response.data.count < response.data.total
 
         let heroes: [HomeModels.HomeViewModel.Hero] = response.data.results.map {
@@ -49,6 +48,5 @@ extension HomePresenter: HomePresentationLogic {
     func presentError(_ error: NetworkError) {
         viewController?.displayError(error: error)
     }
-    
     
 }

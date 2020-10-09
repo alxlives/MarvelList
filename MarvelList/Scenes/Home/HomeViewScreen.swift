@@ -37,6 +37,7 @@ class HomeViewScreen: UIView {
     lazy var activityIndicator: UIActivityIndicatorView = {
         let activity = UIActivityIndicatorView()
         activity.style = .large
+        activity.isHidden = true
         return activity
     }()
     

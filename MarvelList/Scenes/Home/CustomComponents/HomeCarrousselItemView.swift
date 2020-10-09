@@ -69,9 +69,6 @@ extension HomeCarrousselItemView: ViewCodeProtocol {
         }
     }
     
-    func aditionalSetup() {
-    }
-    
 }
 
 extension HomeCarrousselItemView {

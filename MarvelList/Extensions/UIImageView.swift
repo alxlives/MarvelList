@@ -12,23 +12,23 @@ import SDWebImage
 extension UIImageView {
 
     func load(url: String, completion: @escaping ((_ image: UIImage?) -> Void)) {
+        
+        if url.lowercased().contains("image_not_available") {
+            completion(nil)
+            return
+        }
+        
         guard let url = URL(string: url) else {
             completion(nil)
             return
         }
         
          self.sd_setImage(with: url) { (image, error, cache, urls) in
-                    if (error != nil) {
-                        completion(nil)
-                        return
-                    } else {
-                        guard let img = image else {
-                            completion(nil)
-                            return
-                        }
-                        
-                        completion(img)
-                    }
+            guard let img = image, error != nil else {
+                completion(nil)
+                return
+            }
+            completion(img)
         }
 
     }

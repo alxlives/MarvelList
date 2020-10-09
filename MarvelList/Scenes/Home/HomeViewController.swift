@@ -17,11 +17,13 @@ protocol HomeDisplayLogic: class {
 
 class HomeViewController: UIViewController {
     
+    //MARK: - Properties
     private var viewScreen: HomeViewScreen!
     private var interactor: (HomeBusinessLogic & HomeDataStoreProtocol)?
     private var router: HomeRouterProtocol?
     private var model: HomeModels.HomeViewModel?
         
+    //MARK: - Factory Configuration
     func configureInteractor(_ interactor: (HomeBusinessLogic & HomeDataStoreProtocol)?) {
         self.interactor = interactor
     }
@@ -30,22 +32,14 @@ class HomeViewController: UIViewController {
         self.router = router
     }
     
+    //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Marvel Heroes"
         setupView()
         interactor?.getHeroes()
     }
-    
-//    func setupView() {
-//
-//        guard let model = self.model else {
-//            return
-//        }
-//
-//        activityIndicator.isHidden = true
-//
-//    }
+
 }
 
 extension HomeViewController: ViewCodeProtocol {
