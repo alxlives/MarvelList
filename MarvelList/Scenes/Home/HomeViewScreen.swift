@@ -10,17 +10,21 @@ import UIKit
 import SnapKit
 
 protocol HomeViewScreenProtocol {
+    func saveImage(_ image:UIImage, forIndex index: Int)
     func requestMoreHeroes()
 }
 
 class HomeViewScreen: UIView {
 
+    //MARK: - Constants
     private let carrousselHeight:CGFloat = 200.0
     
+    //MARK: - Variables
     var model: HomeModels.HomeViewModel
     var isLoadingNextPage = false
     var delegate: HomeViewScreenProtocol?
     
+    //MARK: - Views
     private lazy var carrousselView: HomeCarrousselView = {
         let carrousselView = HomeCarrousselView(model)
         return carrousselView
@@ -30,6 +34,7 @@ class HomeViewScreen: UIView {
         let tableView = UITableView()
         tableView.contentInsetAdjustmentBehavior = .never
         tableView.delegate = self
+        tableView.dataSource = self
         tableView.backgroundColor = .clear
         return tableView
     }()
@@ -48,6 +53,21 @@ class HomeViewScreen: UIView {
         setupView()
     }
     
+    func updateTableview() {
+        activityIndicator.stopAnimating()
+        isLoadingNextPage = false
+        
+        tableView.beginUpdates()
+        let indexPaths = (tableView.numberOfRows(inSection: 0) ..< model.tableView.count).map { IndexPath(row: $0, section: 0) }
+        tableView.insertRows(at: indexPaths, with: .automatic)
+        tableView.endUpdates()
+        
+        tableView.isUserInteractionEnabled = true
+        tableView.isScrollEnabled = true
+                   
+        activityIndicator.isHidden = !model.hasMore
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -62,7 +82,6 @@ extension HomeViewScreen: ViewCodeProtocol {
     }
     
     func setupConstraints() {
-        
         activityIndicator.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.bottom.equalToSuperview().inset(16)
@@ -77,19 +96,49 @@ extension HomeViewScreen: ViewCodeProtocol {
             make.leading.bottom.trailing.equalToSuperview()
             make.top.equalToSuperview().inset(carrousselHeight)
         }
-        
     }
     
     func aditionalSetup() {
         tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: "HomeTableViewCell")
+        tableView.reloadData()
+        activityIndicator.isHidden = !model.hasMore
     }
 
 }
 
-extension HomeViewScreen: UITableViewDelegate {
+//MARK: - TableViewDataSource / Delegate
+extension HomeViewScreen: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return model.tableView.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell") as? HomeTableViewCell
+        cell?.setupHero(model.tableView[indexPath.row])
+        cell?.delegate = self
+        return cell ?? UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+}
+
+//MARK: - HomeTableViewCellProtocol
+extension HomeViewScreen: HomeTableViewCellProtocol {
+    func imageDidLoad(_ image: UIImage, hero: HomeModels.HomeViewModel.Hero) {
+        if let i = model.tableView.firstIndex(where: { $0.id == hero.id }) {
+            model.tableView[i].image = image
+            delegate?.saveImage(image, forIndex: i)
+        }
+    }
+}
+
+//MARK: - ScrollViewDelegate
+extension HomeViewScreen: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
         guard !isLoadingNextPage else {
             return
         }
@@ -101,7 +150,6 @@ extension HomeViewScreen: UITableViewDelegate {
         
         if scrollView.contentOffset.y < 0 {
             let increment = scrollView.contentOffset.y * -1
-            
             carrousselView.snp.updateConstraints { make in
                 make.height.equalTo(carrousselHeight + increment)
             }
@@ -122,7 +170,6 @@ extension HomeViewScreen: UITableViewDelegate {
             activityIndicator.startAnimating()
             delegate?.requestMoreHeroes()
         }
-        
     }
 }
 

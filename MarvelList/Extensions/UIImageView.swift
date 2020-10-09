@@ -24,7 +24,7 @@ extension UIImageView {
         }
         
          self.sd_setImage(with: url) { (image, error, cache, urls) in
-            guard let img = image, error != nil else {
+            guard let img = image, error == nil else {
                 completion(nil)
                 return
             }
