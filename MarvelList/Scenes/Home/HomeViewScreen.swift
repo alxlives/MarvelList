@@ -99,7 +99,7 @@ extension HomeViewScreen: ViewCodeProtocol {
     }
     
     func aditionalSetup() {
-        tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: "HomeTableViewCell")
+        tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: HomeTableViewCell.reuseIdentifier)
         tableView.reloadData()
         activityIndicator.isHidden = !model.hasMore
     }
@@ -114,7 +114,7 @@ extension HomeViewScreen: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell") as? HomeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.reuseIdentifier) as? HomeTableViewCell
         cell?.setupHero(model.tableView[indexPath.row])
         cell?.delegate = self
         return cell ?? UITableViewCell()

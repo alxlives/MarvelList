@@ -101,14 +101,10 @@ extension HomeCarrousselView: UIScrollViewDelegate {
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         timer?.invalidate()
     }
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if decelerate == false {
-            pageControl.currentPage = scrollView.currentPage
-        }
-    }
     
-    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         pageControl.currentPage = scrollView.currentPage
+        startTimer()
     }
     
 }

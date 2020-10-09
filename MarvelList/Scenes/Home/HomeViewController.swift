@@ -37,6 +37,11 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         self.title = "Marvel Heroes"
         setupView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        CustomLoader.open()
         interactor?.getHeroes()
     }
 
@@ -64,11 +69,12 @@ extension HomeViewController: ViewCodeProtocol {
 }
 
 extension HomeViewController: HomeDisplayLogic {
-    
+
     func displayHeroes(model: HomeModels.HomeViewModel) {
         self.model = model
         interactor?.homeViewModel = model
         DispatchQueue.main.async {
+            CustomLoader.close()
             self.viewScreen = HomeViewScreen(model)
             self.setupViewScreen()
             self.viewScreen.delegate = self

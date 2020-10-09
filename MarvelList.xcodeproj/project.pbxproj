@@ -9,11 +9,16 @@
 /* Begin PBXBuildFile section */
 		172CE395252CFAA0009AC42D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172CE394252CFAA0009AC42D /* AppDelegate.swift */; };
 		172CE397252CFAA0009AC42D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172CE396252CFAA0009AC42D /* SceneDelegate.swift */; };
-		172CE39E252CFAA1009AC42D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 172CE39D252CFAA1009AC42D /* Assets.xcassets */; };
 		172CE3A1252CFAA1009AC42D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 172CE39F252CFAA1009AC42D /* LaunchScreen.storyboard */; };
 		172CE3AC252CFAA2009AC42D /* MarvelListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172CE3AB252CFAA2009AC42D /* MarvelListTests.swift */; };
 		1735D0732530B5BB002DE9A0 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1739435F2530B40400A7D7BA /* SDWebImage.framework */; };
-		1735D0742530B5BB002DE9A0 /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1739435F2530B40400A7D7BA /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1735D0742530B5BB002DE9A0 /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1739435F2530B40400A7D7BA /* SDWebImage.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1735D0762530EBF3002DE9A0 /* CustomLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1735D0752530EBF3002DE9A0 /* CustomLoader.swift */; };
+		1735D0782530EDAC002DE9A0 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1735D0772530EDAC002DE9A0 /* UITableViewCell.swift */; };
+		1735D07B2530EF6B002DE9A0 /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1735D0792530EF63002DE9A0 /* Lottie.framework */; };
+		1735D07C2530EF6B002DE9A0 /* Lottie.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1735D0792530EF63002DE9A0 /* Lottie.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1735D0802530F5CE002DE9A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1735D07E2530F5CE002DE9A0 /* Assets.xcassets */; };
+		1735D0832530FBB7002DE9A0 /* hero-on-the-way.json in Resources */ = {isa = PBXBuildFile; fileRef = 1735D0822530FBB7002DE9A0 /* hero-on-the-way.json */; };
 		17394352252F498F00A7D7BA /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17394351252F498F00A7D7BA /* UIImageView.swift */; };
 		17394354252F5C3800A7D7BA /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17394353252F5C3800A7D7BA /* HomeTableViewCell.swift */; };
 		17394358252F610800A7D7BA /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17394357252F610800A7D7BA /* UIScrollView.swift */; };
@@ -34,7 +39,7 @@
 		176E7FC7252CFE74007BDCAD /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176E7FC6252CFE74007BDCAD /* HomeFactory.swift */; };
 		17730771252F40D6000D9E8D /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17496D32252F3DC900957667 /* SnapKit.framework */; };
 		17730772252F40DC000D9E8D /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17496D32252F3DC900957667 /* SnapKit.framework */; };
-		17730773252F40DC000D9E8D /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 17496D32252F3DC900957667 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		17730773252F40DC000D9E8D /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 17496D32252F3DC900957667 /* SnapKit.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +61,7 @@
 			files = (
 				1735D0742530B5BB002DE9A0 /* SDWebImage.framework in Embed Frameworks */,
 				17730773252F40DC000D9E8D /* SnapKit.framework in Embed Frameworks */,
+				1735D07C2530EF6B002DE9A0 /* Lottie.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,12 +72,16 @@
 		172CE391252CFAA0009AC42D /* MarvelList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		172CE394252CFAA0009AC42D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		172CE396252CFAA0009AC42D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		172CE39D252CFAA1009AC42D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		172CE3A0252CFAA1009AC42D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		172CE3A2252CFAA1009AC42D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		172CE3A7252CFAA2009AC42D /* MarvelListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		172CE3AB252CFAA2009AC42D /* MarvelListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListTests.swift; sourceTree = "<group>"; };
 		172CE3AD252CFAA2009AC42D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1735D0752530EBF3002DE9A0 /* CustomLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoader.swift; sourceTree = "<group>"; };
+		1735D0772530EDAC002DE9A0 /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
+		1735D0792530EF63002DE9A0 /* Lottie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lottie.framework; path = Carthage/Build/iOS/Lottie.framework; sourceTree = SOURCE_ROOT; };
+		1735D07E2530F5CE002DE9A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1735D0822530FBB7002DE9A0 /* hero-on-the-way.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "hero-on-the-way.json"; sourceTree = "<group>"; };
 		17394351252F498F00A7D7BA /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		17394353252F5C3800A7D7BA /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		17394357252F610800A7D7BA /* UIScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
@@ -101,6 +111,7 @@
 			files = (
 				1735D0732530B5BB002DE9A0 /* SDWebImage.framework in Frameworks */,
 				17730772252F40DC000D9E8D /* SnapKit.framework in Frameworks */,
+				1735D07B2530EF6B002DE9A0 /* Lottie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +147,7 @@
 		172CE393252CFAA0009AC42D /* MarvelList */ = {
 			isa = PBXGroup;
 			children = (
+				1735D07D2530F5CE002DE9A0 /* Assets */,
 				17496D31252F3DBE00957667 /* Frameworks */,
 				17394350252F496C00A7D7BA /* Extensions */,
 				172CE394252CFAA0009AC42D /* AppDelegate.swift */,
@@ -143,7 +155,6 @@
 				176E7FB6252CFDFC007BDCAD /* Scenes */,
 				17523A5E252D097A00511B45 /* Network */,
 				17496D2E252E03A200957667 /* Utils */,
-				172CE39D252CFAA1009AC42D /* Assets.xcassets */,
 				172CE39F252CFAA1009AC42D /* LaunchScreen.storyboard */,
 				172CE3A2252CFAA1009AC42D /* Info.plist */,
 			);
@@ -159,10 +170,20 @@
 			path = MarvelListTests;
 			sourceTree = "<group>";
 		};
+		1735D07D2530F5CE002DE9A0 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				1735D0822530FBB7002DE9A0 /* hero-on-the-way.json */,
+				1735D07E2530F5CE002DE9A0 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		17394350252F496C00A7D7BA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				17394351252F498F00A7D7BA /* UIImageView.swift */,
+				1735D0772530EDAC002DE9A0 /* UITableViewCell.swift */,
 				17394357252F610800A7D7BA /* UIScrollView.swift */,
 			);
 			path = Extensions;
@@ -182,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				1739435B253092C700A7D7BA /* ViewCodeProtocol.swift */,
+				1735D0752530EBF3002DE9A0 /* CustomLoader.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -189,6 +211,7 @@
 		17496D31252F3DBE00957667 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1735D0792530EF63002DE9A0 /* Lottie.framework */,
 				1739435F2530B40400A7D7BA /* SDWebImage.framework */,
 				17496D32252F3DC900957667 /* SnapKit.framework */,
 			);
@@ -314,7 +337,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				172CE3A1252CFAA1009AC42D /* LaunchScreen.storyboard in Resources */,
-				172CE39E252CFAA1009AC42D /* Assets.xcassets in Resources */,
+				1735D0802530F5CE002DE9A0 /* Assets.xcassets in Resources */,
+				1735D0832530FBB7002DE9A0 /* hero-on-the-way.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +381,8 @@
 				176E7FC7252CFE74007BDCAD /* HomeFactory.swift in Sources */,
 				176E7FB9252CFE11007BDCAD /* HomeRouter.swift in Sources */,
 				17394358252F610800A7D7BA /* UIScrollView.swift in Sources */,
+				1735D0782530EDAC002DE9A0 /* UITableViewCell.swift in Sources */,
+				1735D0762530EBF3002DE9A0 /* CustomLoader.swift in Sources */,
 				176E7FC5252CFE67007BDCAD /* HomeInteractor.swift in Sources */,
 				17496D27252DFF4100957667 /* HomeCarrousselView.swift in Sources */,
 				17496D24252DF49D00957667 /* NetworkEncription.swift in Sources */,
