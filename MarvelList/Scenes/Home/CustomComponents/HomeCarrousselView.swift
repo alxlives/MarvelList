@@ -10,47 +10,77 @@ import UIKit
 import SnapKit
 
 class HomeCarrousselView: UIView {
+
+    //MARK: - Properties
+    var model: HomeModels.HomeViewModel
     
-    @IBOutlet weak var stackItems: UIStackView!
-    @IBOutlet weak var pageControl: UIPageControl!
-    @IBOutlet weak var scrollView: UIScrollView!
-        
-    var model: HomeModels.HomeViewModel? {
-        didSet {
-            self.layoutIfNeeded()
-            self.setupLayout()
-        }
-    }
+    //MARK: - Views
+    private lazy var stackItems: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .horizontal
+        stack.spacing = 0.0
+        return stack
+    }()
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        self.layoutIfNeeded()
-    }
+    private lazy var pageControl: UIPageControl = {
+        let pageControl = UIPageControl()
+        pageControl.numberOfPages = model.carroussel.count
+        return pageControl
+    }()
     
-    func setupLayout() {
-        
-        guard let viewModel = self.model else {
-            return
-        }
-        
+    private lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.isPagingEnabled = true
         scrollView.delegate = self
-        pageControl.numberOfPages = viewModel.carroussel.count
-        
-        for hero in viewModel.carroussel {
-            let carrousselItem = HomeCarrousselItemView.instanceFromNib()
+        return scrollView
+    }()
+ 
+    //MARK: - Init
+    init (_ model: HomeModels.HomeViewModel) {
+        self.model = model
+        super.init(frame: .zero)
+        setupView()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension HomeCarrousselView: ViewCodeProtocol {
+    
+    func setupHierarchy() {
+        scrollView.addSubview(stackItems)
+        self.addSubview(scrollView)
+        self.addSubview(pageControl)
+    }
+    
+    func setupConstraints() {
+        pageControl.snp.makeConstraints { make in
+            make.centerX.bottom.equalToSuperview()
+        }
+        scrollView.snp.makeConstraints { make in
+            make.top.left.right.bottom.equalToSuperview()
+        }
+        stackItems.snp.makeConstraints { make in
+            make.top.left.right.bottom.equalToSuperview()
+            make.height.equalToSuperview()
+        }
+    }
+    
+    func aditionalSetup() {
+        for hero in model.carroussel {
+            let carrousselItem = HomeCarrousselItemView(hero)
             stackItems.addArrangedSubview(carrousselItem)
-            
+
             carrousselItem.snp.makeConstraints { make in
                 make.height.equalToSuperview()
                 make.width.equalTo(UIScreen.main.bounds.width)
             }
-            
-            carrousselItem.setupLayout(hero: hero)
         }
     }
-        
 }
-
+    
 extension HomeCarrousselView: UIScrollViewDelegate {
     // MARK: UIScrollViewDelegate
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
@@ -63,11 +93,5 @@ extension HomeCarrousselView: UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let currentPage = scrollView.currentPage
         pageControl.currentPage = currentPage
-    }
-}
-
-extension HomeCarrousselView {
-    class func instanceFromNib() -> HomeCarrousselView {
-        return UINib(nibName: "HomeCarrousselView", bundle: nil).instantiate(withOwner: self, options: nil).first as! HomeCarrousselView
     }
 }

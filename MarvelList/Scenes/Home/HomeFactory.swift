@@ -13,8 +13,7 @@ public struct HomeFactory {
     private init() {}
     
     public static func makeController() -> UIViewController {
-        let viewController = HomeViewController(nibName: "HomeViewController", bundle: nil)
-        
+        let viewController = HomeViewController()
         let presenter = HomePresenter(viewController: viewController)
         let worker = HomeWorker()
         let interactor = HomeInteractor(presenter: presenter, worker: worker)

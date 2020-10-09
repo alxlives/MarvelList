@@ -17,18 +17,11 @@ protocol HomeDisplayLogic: class {
 
 class HomeViewController: UIViewController {
     
+    private var viewScreen: HomeViewScreen!
     private var interactor: (HomeBusinessLogic & HomeDataStoreProtocol)?
     private var router: HomeRouterProtocol?
     private var model: HomeModels.HomeViewModel?
-    
-    @IBOutlet weak var carrousselHolder: UIView!
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
-    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
-    
-    var isLoadingNextPage = false
-    
+        
     func configureInteractor(_ interactor: (HomeBusinessLogic & HomeDataStoreProtocol)?) {
         self.interactor = interactor
     }
@@ -40,29 +33,40 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Marvel Heroes"
+        setupView()
         interactor?.getHeroes()
     }
     
-    func setupView() {
-        
-        guard let model = self.model else {
-            return
-        }
-        
-        let carrousselView = HomeCarrousselView.instanceFromNib()
-        carrousselView.translatesAutoresizingMaskIntoConstraints = false
-        
-        carrousselHolder.addSubview(carrousselView)
-        
-        carrousselView.snp.makeConstraints{ make in
-            make.top.bottom.leading.trailing.equalToSuperview()
-        }
-        
-        carrousselView.model = model
-        
-        activityIndicator.isHidden = true
+//    func setupView() {
+//
+//        guard let model = self.model else {
+//            return
+//        }
+//
+//        activityIndicator.isHidden = true
+//
+//    }
+}
 
+extension HomeViewController: ViewCodeProtocol {
+    
+    func setupHierarchy() {
     }
+    
+    func setupConstraints() {
+    }
+    
+    func aditionalSetup() {
+        self.view.backgroundColor = .white
+    }
+    
+    func setupViewScreen() {
+        view.addSubview(viewScreen)
+        viewScreen.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+    }
+    
 }
 
 extension HomeViewController: HomeDisplayLogic {
@@ -70,32 +74,33 @@ extension HomeViewController: HomeDisplayLogic {
     func displayHeroes(model: HomeModels.HomeViewModel) {
         self.model = model
         interactor?.homeViewModel = model
+        
         DispatchQueue.main.async {
-            self.setupView()
-            self.tableView.dataSource = self
-            self.tableView.delegate = self
-            self.tableView.contentInsetAdjustmentBehavior = .never
-            self.tableView.reloadData()
-            
-            self.activityIndicator.isHidden = false
+            self.viewScreen = HomeViewScreen(model)
+            self.setupViewScreen()
+            self.viewScreen.delegate = self
+            self.viewScreen.tableView.dataSource = self
+            self.viewScreen.tableView.reloadData()
+            self.viewScreen.activityIndicator.isHidden = false
         }
     }
     
     func displayNextPage(model: HomeModels.HomeViewModel) {
         self.model = model
+        self.viewScreen.model = model
         DispatchQueue.main.async {
-            self.activityIndicator.stopAnimating()
-            self.isLoadingNextPage = false
-            self.tableView.beginUpdates()
+            self.viewScreen.activityIndicator.stopAnimating()
+            self.viewScreen.isLoadingNextPage = false
+            self.viewScreen.tableView.beginUpdates()
             
-            let indexPaths = (self.tableView.numberOfRows(inSection: 0) ..< model.tableView.count).map { IndexPath(row: $0, section: 0) }
+            let indexPaths = (self.viewScreen.tableView.numberOfRows(inSection: 0) ..< model.tableView.count).map { IndexPath(row: $0, section: 0) }
 
-            self.tableView.insertRows(at: indexPaths, with: .automatic)
-            self.tableView.endUpdates()
-            self.tableView.isUserInteractionEnabled = true
-            self.tableView.isScrollEnabled = true
+            self.viewScreen.tableView.insertRows(at: indexPaths, with: .automatic)
+            self.viewScreen.tableView.endUpdates()
+            self.viewScreen.tableView.isUserInteractionEnabled = true
+            self.viewScreen.tableView.isScrollEnabled = true
             
-            self.activityIndicator.isHidden = !model.hasMore
+            self.viewScreen.activityIndicator.isHidden = !model.hasMore
         }
         
         interactor?.homeViewModel = self.model
@@ -128,10 +133,11 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         
-        let cell = HomeTableViewCell.instanceFromNib()
-        cell.setupHero(viewModel[indexPath.row])
-        cell.delegate = self
-        return cell
+        let cell = viewScreen.tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell") as? HomeTableViewCell
+
+        cell?.setupHero(viewModel[indexPath.row])
+        cell?.delegate = self
+        return cell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -150,42 +156,10 @@ extension HomeViewController: HomeTableViewCellProtocol {
         
     }
     
-    
 }
 
-extension HomeViewController: UIScrollViewDelegate {
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        guard !isLoadingNextPage, let viewModel = self.model else {
-            return
-        }
-        
-        let offset = scrollView.contentOffset
-        let contentHeight = scrollView.contentSize.height
-        let frameHeight = scrollView.frame.size.height
-        let reachingPoint = self.view.frame.size.height - activityIndicator.frame.origin.y
-        
-        #warning("pass logic to view")
-        if scrollView.contentOffset.y < 0 {
-            let increment = scrollView.contentOffset.y * -1
-            heightConstraint.constant = 200 + increment
-            return
-        } else {
-            heightConstraint.constant = 200
-        }
-                
-        if offset.y > (contentHeight - frameHeight + reachingPoint) && viewModel.hasMore {
-            isLoadingNextPage = true
-            
-            scrollView.isUserInteractionEnabled = false
-            scrollView.isScrollEnabled = false
-            scrollView.setContentOffset(offset, animated: false)
-
-            activityIndicator.startAnimating()
-            
-            self.interactor?.getHeroes()
-        }
-        
+extension HomeViewController: HomeViewScreenProtocol {
+    func requestMoreHeroes() {
+        self.interactor?.getHeroes()
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 extension UIImageView {
 
@@ -15,19 +16,25 @@ extension UIImageView {
             completion(nil)
             return
         }
-        URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) -> Void in
-            DispatchQueue.main.async(execute: { () -> Void in
-                if error != nil {
-                    completion(nil)
-                    return
-                }
-                guard let image = UIImage(data: data!) else {
-                    completion(nil)
-                    return
-                }
-                completion(image)
-            })
-        }).resume()
+        
+         self.sd_setImage(with: url) { (image, error, cache, urls) in
+                    if (error != nil) {
+                        completion(nil)
+                        return
+                    } else {
+                        guard let img = image else {
+                            completion(nil)
+                            return
+                        }
+                        
+                        completion(img)
+                    }
+        }
+
+    }
+    
+    func cancelRequest() {
+        self.sd_cancelCurrentImageLoad()
     }
     
     class func getDefaultImage() -> UIImage {
