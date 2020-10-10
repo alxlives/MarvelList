@@ -8,10 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		172CE395252CFAA0009AC42D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172CE394252CFAA0009AC42D /* AppDelegate.swift */; };
-		172CE397252CFAA0009AC42D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172CE396252CFAA0009AC42D /* SceneDelegate.swift */; };
-		172CE39E252CFAA1009AC42D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 172CE39D252CFAA1009AC42D /* Assets.xcassets */; };
 		172CE3A1252CFAA1009AC42D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 172CE39F252CFAA1009AC42D /* LaunchScreen.storyboard */; };
 		172CE3AC252CFAA2009AC42D /* MarvelListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172CE3AB252CFAA2009AC42D /* MarvelListTests.swift */; };
+		1735D0732530B5BB002DE9A0 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1739435F2530B40400A7D7BA /* SDWebImage.framework */; };
+		1735D0742530B5BB002DE9A0 /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1739435F2530B40400A7D7BA /* SDWebImage.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1735D0762530EBF3002DE9A0 /* CustomLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1735D0752530EBF3002DE9A0 /* CustomLoader.swift */; };
+		1735D0782530EDAC002DE9A0 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1735D0772530EDAC002DE9A0 /* UITableViewCell.swift */; };
+		1735D07B2530EF6B002DE9A0 /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1735D0792530EF63002DE9A0 /* Lottie.framework */; };
+		1735D07C2530EF6B002DE9A0 /* Lottie.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1735D0792530EF63002DE9A0 /* Lottie.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1735D0802530F5CE002DE9A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1735D07E2530F5CE002DE9A0 /* Assets.xcassets */; };
+		1735D0832530FBB7002DE9A0 /* hero-on-the-way.json in Resources */ = {isa = PBXBuildFile; fileRef = 1735D0822530FBB7002DE9A0 /* hero-on-the-way.json */; };
+		1735D09225323552002DE9A0 /* MarvelList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1735D09025323552002DE9A0 /* MarvelList.xcdatamodeld */; };
+		1735D09425323596002DE9A0 /* MarvelListDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1735D09325323596002DE9A0 /* MarvelListDataStorage.swift */; };
+		17394352252F498F00A7D7BA /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17394351252F498F00A7D7BA /* UIImageView.swift */; };
+		17394354252F5C3800A7D7BA /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17394353252F5C3800A7D7BA /* HomeTableViewCell.swift */; };
+		17394358252F610800A7D7BA /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17394357252F610800A7D7BA /* UIScrollView.swift */; };
+		1739435C253092C800A7D7BA /* ViewCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1739435B253092C700A7D7BA /* ViewCodeProtocol.swift */; };
+		1739435E2530A02C00A7D7BA /* HomeViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1739435D2530A02C00A7D7BA /* HomeViewScreen.swift */; };
+		17496D24252DF49D00957667 /* NetworkEncription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17496D23252DF49D00957667 /* NetworkEncription.swift */; };
+		17496D27252DFF4100957667 /* HomeCarrousselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17496D26252DFF4100957667 /* HomeCarrousselView.swift */; };
+		17496D2B252E017500957667 /* HomeCarrousselItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17496D2A252E017500957667 /* HomeCarrousselItemView.swift */; };
+		17523A60252D099B00511B45 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17523A5F252D099B00511B45 /* NetworkError.swift */; };
+		17523A62252D09F100511B45 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17523A61252D09F100511B45 /* NetworkManager.swift */; };
+		17523A64252D0B8800511B45 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17523A63252D0B8800511B45 /* NetworkRequest.swift */; };
 		176E7FB9252CFE11007BDCAD /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176E7FB8252CFE11007BDCAD /* HomeRouter.swift */; };
 		176E7FBB252CFE1D007BDCAD /* HomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176E7FBA252CFE1D007BDCAD /* HomeWorker.swift */; };
 		176E7FBD252CFE2F007BDCAD /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176E7FBC252CFE2F007BDCAD /* HomePresenter.swift */; };
@@ -19,7 +38,9 @@
 		176E7FC1252CFE4A007BDCAD /* HomeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176E7FC0252CFE49007BDCAD /* HomeModels.swift */; };
 		176E7FC5252CFE67007BDCAD /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176E7FC4252CFE67007BDCAD /* HomeInteractor.swift */; };
 		176E7FC7252CFE74007BDCAD /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176E7FC6252CFE74007BDCAD /* HomeFactory.swift */; };
-		176E7FC9252D0046007BDCAD /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 176E7FC8252D0046007BDCAD /* HomeViewController.xib */; };
+		17730771252F40D6000D9E8D /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17496D32252F3DC900957667 /* SnapKit.framework */; };
+		17730772252F40DC000D9E8D /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17496D32252F3DC900957667 /* SnapKit.framework */; };
+		17730773252F40DC000D9E8D /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 17496D32252F3DC900957667 /* SnapKit.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,16 +53,50 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		17730774252F40DC000D9E8D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1735D0742530B5BB002DE9A0 /* SDWebImage.framework in Embed Frameworks */,
+				17730773252F40DC000D9E8D /* SnapKit.framework in Embed Frameworks */,
+				1735D07C2530EF6B002DE9A0 /* Lottie.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		172CE391252CFAA0009AC42D /* MarvelList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		172CE394252CFAA0009AC42D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		172CE396252CFAA0009AC42D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		172CE39D252CFAA1009AC42D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		172CE3A0252CFAA1009AC42D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		172CE3A2252CFAA1009AC42D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		172CE3A7252CFAA2009AC42D /* MarvelListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		172CE3AB252CFAA2009AC42D /* MarvelListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListTests.swift; sourceTree = "<group>"; };
 		172CE3AD252CFAA2009AC42D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1735D0752530EBF3002DE9A0 /* CustomLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoader.swift; sourceTree = "<group>"; };
+		1735D0772530EDAC002DE9A0 /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
+		1735D0792530EF63002DE9A0 /* Lottie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lottie.framework; path = Carthage/Build/iOS/Lottie.framework; sourceTree = SOURCE_ROOT; };
+		1735D07E2530F5CE002DE9A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1735D0822530FBB7002DE9A0 /* hero-on-the-way.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "hero-on-the-way.json"; sourceTree = "<group>"; };
+		1735D09125323552002DE9A0 /* MarvelList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MarvelList.xcdatamodel; sourceTree = "<group>"; };
+		1735D09325323596002DE9A0 /* MarvelListDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListDataStorage.swift; sourceTree = "<group>"; };
+		17394351252F498F00A7D7BA /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		17394353252F5C3800A7D7BA /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		17394357252F610800A7D7BA /* UIScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
+		1739435B253092C700A7D7BA /* ViewCodeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodeProtocol.swift; sourceTree = "<group>"; };
+		1739435D2530A02C00A7D7BA /* HomeViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewScreen.swift; sourceTree = "<group>"; };
+		1739435F2530B40400A7D7BA /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = SOURCE_ROOT; };
+		17496D23252DF49D00957667 /* NetworkEncription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEncription.swift; sourceTree = "<group>"; };
+		17496D26252DFF4100957667 /* HomeCarrousselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCarrousselView.swift; sourceTree = "<group>"; };
+		17496D2A252E017500957667 /* HomeCarrousselItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCarrousselItemView.swift; sourceTree = "<group>"; };
+		17496D32252F3DC900957667 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = SOURCE_ROOT; };
+		17523A5F252D099B00511B45 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		17523A61252D09F100511B45 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		17523A63252D0B8800511B45 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		176E7FB8252CFE11007BDCAD /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		176E7FBA252CFE1D007BDCAD /* HomeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorker.swift; sourceTree = "<group>"; };
 		176E7FBC252CFE2F007BDCAD /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
@@ -49,7 +104,6 @@
 		176E7FC0252CFE49007BDCAD /* HomeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModels.swift; sourceTree = "<group>"; };
 		176E7FC4252CFE67007BDCAD /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		176E7FC6252CFE74007BDCAD /* HomeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactory.swift; sourceTree = "<group>"; };
-		176E7FC8252D0046007BDCAD /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +111,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1735D0732530B5BB002DE9A0 /* SDWebImage.framework in Frameworks */,
+				17730772252F40DC000D9E8D /* SnapKit.framework in Frameworks */,
+				1735D07B2530EF6B002DE9A0 /* Lottie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17730771252F40D6000D9E8D /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,9 +150,13 @@
 			isa = PBXGroup;
 			children = (
 				172CE394252CFAA0009AC42D /* AppDelegate.swift */,
-				172CE396252CFAA0009AC42D /* SceneDelegate.swift */,
+				1735D07D2530F5CE002DE9A0 /* Assets */,
+				1735D08C2532352F002DE9A0 /* LocalStorage */,
+				17496D31252F3DBE00957667 /* Frameworks */,
+				17394350252F496C00A7D7BA /* Extensions */,
 				176E7FB6252CFDFC007BDCAD /* Scenes */,
-				172CE39D252CFAA1009AC42D /* Assets.xcassets */,
+				17523A5E252D097A00511B45 /* Network */,
+				17496D2E252E03A200957667 /* Utils */,
 				172CE39F252CFAA1009AC42D /* LaunchScreen.storyboard */,
 				172CE3A2252CFAA1009AC42D /* Info.plist */,
 			);
@@ -110,6 +172,74 @@
 			path = MarvelListTests;
 			sourceTree = "<group>";
 		};
+		1735D07D2530F5CE002DE9A0 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				1735D0822530FBB7002DE9A0 /* hero-on-the-way.json */,
+				1735D07E2530F5CE002DE9A0 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		1735D08C2532352F002DE9A0 /* LocalStorage */ = {
+			isa = PBXGroup;
+			children = (
+				1735D09025323552002DE9A0 /* MarvelList.xcdatamodeld */,
+				1735D09325323596002DE9A0 /* MarvelListDataStorage.swift */,
+			);
+			path = LocalStorage;
+			sourceTree = "<group>";
+		};
+		17394350252F496C00A7D7BA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				17394351252F498F00A7D7BA /* UIImageView.swift */,
+				1735D0772530EDAC002DE9A0 /* UITableViewCell.swift */,
+				17394357252F610800A7D7BA /* UIScrollView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		17496D25252DFECF00957667 /* CustomComponents */ = {
+			isa = PBXGroup;
+			children = (
+				17496D26252DFF4100957667 /* HomeCarrousselView.swift */,
+				17496D2A252E017500957667 /* HomeCarrousselItemView.swift */,
+				17394353252F5C3800A7D7BA /* HomeTableViewCell.swift */,
+			);
+			path = CustomComponents;
+			sourceTree = "<group>";
+		};
+		17496D2E252E03A200957667 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1739435B253092C700A7D7BA /* ViewCodeProtocol.swift */,
+				1735D0752530EBF3002DE9A0 /* CustomLoader.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		17496D31252F3DBE00957667 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1735D0792530EF63002DE9A0 /* Lottie.framework */,
+				1739435F2530B40400A7D7BA /* SDWebImage.framework */,
+				17496D32252F3DC900957667 /* SnapKit.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		17523A5E252D097A00511B45 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				17523A5F252D099B00511B45 /* NetworkError.swift */,
+				17496D23252DF49D00957667 /* NetworkEncription.swift */,
+				17523A63252D0B8800511B45 /* NetworkRequest.swift */,
+				17523A61252D09F100511B45 /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		176E7FB6252CFDFC007BDCAD /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +251,7 @@
 		176E7FB7252CFDFC007BDCAD /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				17496D25252DFECF00957667 /* CustomComponents */,
 				176E7FC6252CFE74007BDCAD /* HomeFactory.swift */,
 				176E7FC4252CFE67007BDCAD /* HomeInteractor.swift */,
 				176E7FBC252CFE2F007BDCAD /* HomePresenter.swift */,
@@ -128,7 +259,7 @@
 				176E7FBA252CFE1D007BDCAD /* HomeWorker.swift */,
 				176E7FC0252CFE49007BDCAD /* HomeModels.swift */,
 				176E7FBE252CFE3C007BDCAD /* HomeViewController.swift */,
-				176E7FC8252D0046007BDCAD /* HomeViewController.xib */,
+				1739435D2530A02C00A7D7BA /* HomeViewScreen.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -143,6 +274,8 @@
 				172CE38D252CFAA0009AC42D /* Sources */,
 				172CE38E252CFAA0009AC42D /* Frameworks */,
 				172CE38F252CFAA0009AC42D /* Resources */,
+				17496D34252F3EA400957667 /* ShellScript */,
+				17730774252F40DC000D9E8D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -215,8 +348,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				172CE3A1252CFAA1009AC42D /* LaunchScreen.storyboard in Resources */,
-				172CE39E252CFAA1009AC42D /* Assets.xcassets in Resources */,
-				176E7FC9252D0046007BDCAD /* HomeViewController.xib in Resources */,
+				1735D0802530F5CE002DE9A0 /* Assets.xcassets in Resources */,
+				1735D0832530FBB7002DE9A0 /* hero-on-the-way.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,20 +362,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		17496D34252F3EA400957667 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#/usr/local/bin/carthage copy-frameworks\n#$SRCROOT/Carthage/Build/iOS/Snapkit.framework\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		172CE38D252CFAA0009AC42D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1739435C253092C800A7D7BA /* ViewCodeProtocol.swift in Sources */,
 				176E7FC1252CFE4A007BDCAD /* HomeModels.swift in Sources */,
 				176E7FC7252CFE74007BDCAD /* HomeFactory.swift in Sources */,
 				176E7FB9252CFE11007BDCAD /* HomeRouter.swift in Sources */,
+				17394358252F610800A7D7BA /* UIScrollView.swift in Sources */,
+				1735D0782530EDAC002DE9A0 /* UITableViewCell.swift in Sources */,
+				1735D0762530EBF3002DE9A0 /* CustomLoader.swift in Sources */,
 				176E7FC5252CFE67007BDCAD /* HomeInteractor.swift in Sources */,
+				17496D27252DFF4100957667 /* HomeCarrousselView.swift in Sources */,
+				1735D09425323596002DE9A0 /* MarvelListDataStorage.swift in Sources */,
+				17496D24252DF49D00957667 /* NetworkEncription.swift in Sources */,
 				172CE395252CFAA0009AC42D /* AppDelegate.swift in Sources */,
 				176E7FBD252CFE2F007BDCAD /* HomePresenter.swift in Sources */,
+				1735D09225323552002DE9A0 /* MarvelList.xcdatamodeld in Sources */,
+				17394352252F498F00A7D7BA /* UIImageView.swift in Sources */,
 				176E7FBB252CFE1D007BDCAD /* HomeWorker.swift in Sources */,
 				176E7FBF252CFE3C007BDCAD /* HomeViewController.swift in Sources */,
-				172CE397252CFAA0009AC42D /* SceneDelegate.swift in Sources */,
+				17523A60252D099B00511B45 /* NetworkError.swift in Sources */,
+				17523A64252D0B8800511B45 /* NetworkRequest.swift in Sources */,
+				17496D2B252E017500957667 /* HomeCarrousselItemView.swift in Sources */,
+				17394354252F5C3800A7D7BA /* HomeTableViewCell.swift in Sources */,
+				17523A62252D09F100511B45 /* NetworkManager.swift in Sources */,
+				1739435E2530A02C00A7D7BA /* HomeViewScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,7 +562,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MarvelList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -403,7 +575,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.MarvelList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -412,7 +584,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MarvelList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -420,7 +597,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.MarvelList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -430,6 +607,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MarvelListTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -451,6 +632,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MarvelListTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -497,6 +682,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1735D09025323552002DE9A0 /* MarvelList.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1735D09125323552002DE9A0 /* MarvelList.xcdatamodel */,
+			);
+			currentVersion = 1735D09125323552002DE9A0 /* MarvelList.xcdatamodel */;
+			path = MarvelList.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 172CE389252CFAA0009AC42D /* Project object */;
 }

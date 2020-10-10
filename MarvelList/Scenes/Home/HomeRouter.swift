@@ -8,10 +8,6 @@
 
 import Foundation
 
-protocol HomeRouterProtocol {
-    
-}
+protocol HomeRouterProtocol { }
 
-class HomeRouter: HomeRouterProtocol {
-    
-}
+class HomeRouter: HomeRouterProtocol { }
