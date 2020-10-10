@@ -11,7 +11,7 @@ import UIKit
 struct HomeModels {
     
     struct HomeViewModel {
-        let carroussel: [Hero]
+        var carroussel: [Hero]
         var tableView: [Hero]
         var hasMore: Bool
         
@@ -46,6 +46,11 @@ struct HomeModels {
             let path: String
             let `extension`: String
         }
+    }
+    
+    enum HomePersistance {
+        case carroussel
+        case tableView
     }
 }
 

@@ -8,10 +8,15 @@
 
 import UIKit
 
+protocol HomeCarrousselItemViewProtocol {
+    func imageDidLoad(_ image:UIImage, hero: HomeModels.HomeViewModel.Hero)
+}
+
 class HomeCarrousselItemView: UIView {
     //MARK: - Properties
-    private var hero: HomeModels.HomeViewModel.Hero?
-    
+    private var hero: HomeModels.HomeViewModel.Hero
+    var delegate: HomeCarrousselItemViewProtocol?
+
     //MARK: - Views
     private lazy var imgView: UIImageView = {
         let imageView = UIImageView()
@@ -27,7 +32,7 @@ class HomeCarrousselItemView: UIView {
         lbl.font = UIFont.systemFont(ofSize: 17, weight: .black)
         lbl.textAlignment = .center
         lbl.numberOfLines = 0
-        lbl.text = hero?.name
+        lbl.text = hero.name
         lbl.layer.shadowColor = UIColor.white.cgColor
         lbl.layer.shadowOffset = .zero
         lbl.layer.shadowRadius = 5.0
@@ -66,16 +71,18 @@ extension HomeCarrousselItemView: ViewCodeProtocol {
             make.leading.trailing.equalToSuperview().inset(16)
         }
     }
-    
 }
 
 extension HomeCarrousselItemView {
     
     func loadImage() {
-        imgView.load(url: hero?.thumbUrl ?? "", completion: { (image) in
-            let img = image ?? UIImageView.getDefaultImage()
-            self.imgView.image = img
-            
+        imgView.load(url: hero.thumbUrl ?? "", completion: { (image) in
+            if let img = image {
+                self.imgView.image = img
+                self.delegate?.imageDidLoad(img, hero: self.hero)
+            } else {
+                self.imgView.image = UIImageView.getDefaultImage()
+            }
             UIView.animate(withDuration: 0.5, animations: {
                 self.imgView.alpha = 1
             })

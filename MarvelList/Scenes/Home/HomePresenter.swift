@@ -8,6 +8,7 @@
 
 protocol HomePresentationLogic {
     func presentLoader()
+    func presentLocalStorage(heroes: [HomeModels.HomeViewModel.Hero], hasMore: Bool)
     func presentSuccess(_ response: HomeModels.HomeResponse, viewModel:HomeModels.HomeViewModel?)
     func presentError(_ error: NetworkError)
 }
@@ -38,11 +39,7 @@ extension HomePresenter: HomePresentationLogic {
         }
         
         guard var model = viewModel else {
-            let carrousselHeroes = Array(heroes.prefix(5))
-            let tableViewHeroes = Array(heroes.dropFirst(5))
-            let viewModel = HomeModels.HomeViewModel(carroussel: carrousselHeroes, tableView: tableViewHeroes, hasMore: hasMore)
-                   
-            viewController?.displayHeroes(model: viewModel)
+            self.presentFirstPage(heroes: heroes, hasMore: hasMore)
             return
         }
         
@@ -51,8 +48,18 @@ extension HomePresenter: HomePresentationLogic {
         viewController?.displayNextPage(model: model)
     }
     
+    func presentLocalStorage(heroes: [HomeModels.HomeViewModel.Hero], hasMore: Bool) {
+        presentFirstPage(heroes: heroes, hasMore: hasMore)
+    }
+    
     func presentError(_ error: NetworkError) {
         viewController?.displayError(error: error)
     }
-    
+ 
+    private func presentFirstPage(heroes: [HomeModels.HomeViewModel.Hero], hasMore: Bool) {
+        let carrousselHeroes = Array(heroes.prefix(5))
+        let tableViewHeroes = Array(heroes.dropFirst(5))
+        let viewModel = HomeModels.HomeViewModel(carroussel: carrousselHeroes, tableView: tableViewHeroes, hasMore: hasMore)
+        viewController?.displayHeroes(model: viewModel)
+    }
 }

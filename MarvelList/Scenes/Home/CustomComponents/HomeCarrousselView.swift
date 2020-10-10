@@ -12,6 +12,7 @@ import SnapKit
 class HomeCarrousselView: UIView {
     //MARK: - Constants
     private let carrousselTime = 3.0
+    var delegate: HomeViewScreenPersistanceProtocol?
     
     //MARK: - Properties
     var model: HomeModels.HomeViewModel
@@ -74,6 +75,7 @@ extension HomeCarrousselView: ViewCodeProtocol {
     func aditionalSetup() {
         for hero in model.carroussel {
             let carrousselItem = HomeCarrousselItemView(hero)
+            carrousselItem.delegate = self
             stackItems.addArrangedSubview(carrousselItem)
 
             carrousselItem.snp.makeConstraints { make in
@@ -81,7 +83,6 @@ extension HomeCarrousselView: ViewCodeProtocol {
                 make.width.equalTo(UIScreen.main.bounds.width)
             }
         }
-        
         startTimer()
     }
     
@@ -93,7 +94,13 @@ extension HomeCarrousselView: ViewCodeProtocol {
         })
         RunLoop.main.add(timer!, forMode: .common)
     }
+}
 
+// MARK: HomeCarrousselItemViewProtocol
+extension HomeCarrousselView: HomeCarrousselItemViewProtocol {
+    func imageDidLoad(_ image: UIImage, hero: HomeModels.HomeViewModel.Hero) {
+        self.delegate?.imageDidLoad(image, hero: hero)
+    }
 }
     
 // MARK: UIScrollViewDelegate
@@ -106,5 +113,4 @@ extension HomeCarrousselView: UIScrollViewDelegate {
         pageControl.currentPage = scrollView.currentPage
         startTimer()
     }
-    
 }

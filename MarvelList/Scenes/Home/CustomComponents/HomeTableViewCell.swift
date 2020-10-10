@@ -8,14 +8,10 @@
 
 import UIKit
 
-protocol HomeTableViewCellProtocol {
-    func imageDidLoad(_ image:UIImage, hero: HomeModels.HomeViewModel.Hero)
-}
-
 class HomeTableViewCell: UITableViewCell {
     //MARK: - Properties
     private var hero: HomeModels.HomeViewModel.Hero?
-    var delegate: HomeTableViewCellProtocol?
+    var delegate: HomeViewScreenPersistanceProtocol?
     
     //MARK: - Views
     private lazy var imgView: UIImageView = {
@@ -46,6 +42,7 @@ class HomeTableViewCell: UITableViewCell {
     
 }
 
+//MARK: - ViewCodeProtocol
 extension HomeTableViewCell: ViewCodeProtocol {
     
     func setupHierarchy() {
@@ -72,8 +69,8 @@ extension HomeTableViewCell: ViewCodeProtocol {
     }
 }
 
+//MARK: - Image Loading + Animations
 extension HomeTableViewCell {
-    
     private func checkCacheImage() {
         if let cacheImage = hero?.image {
             self.imgView.image = cacheImage
@@ -89,7 +86,6 @@ extension HomeTableViewCell {
         }
         
         imgView.load(url: hero.thumbUrl ?? "", completion: { (image) in
-            
             if let img = image {
                 self.imgView.image = img
                 self.delegate?.imageDidLoad(img, hero: hero)

@@ -22,7 +22,7 @@ class HomeViewController: UIViewController {
     private var interactor: (HomeBusinessLogic & HomeDataStoreProtocol)?
     private var router: HomeRouterProtocol?
     private var model: HomeModels.HomeViewModel?
-        
+    
     //MARK: - Factory Configuration
     func configureInteractor(_ interactor: (HomeBusinessLogic & HomeDataStoreProtocol)?) {
         self.interactor = interactor
@@ -37,6 +37,13 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         self.title = "Marvel Heroes"
         setupView()
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
+    }
+    
+    @objc func appMovedToBackground() {
+        print("App moved to background!")
+        interactor?.saveDataToLocalStorage()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -73,7 +80,7 @@ extension HomeViewController: HomeDisplayLogic {
     func displayLoader() {
         CustomLoader.open()
     }
-
+    
     func displayHeroes(model: HomeModels.HomeViewModel) {
         self.model = model
         interactor?.homeViewModel = model
@@ -93,13 +100,12 @@ extension HomeViewController: HomeDisplayLogic {
             self.viewScreen.updateTableview()
         }
     }
-
     
     func displayError(error: NetworkError) {
         let alert = UIAlertController(title: "Erro", message: error.localizedDescription, preferredStyle: .alert)
         let action = UIAlertAction(title: "Tentar Novamente", style: .default, handler: { action in
-                self.interactor?.getHeroes()
-            })
+            self.interactor?.getHeroes()
+        })
         alert.addAction(action)
         
         DispatchQueue.main.async {
@@ -110,8 +116,8 @@ extension HomeViewController: HomeDisplayLogic {
 }
 
 extension HomeViewController: HomeViewScreenProtocol {
-    func saveImage(_ image: UIImage, forIndex index: Int) {
-        interactor?.setImage(image, forIndex: index)
+    func saveImage(_ image:UIImage, forIndex index: Int, at: HomeModels.HomePersistance) {
+        interactor?.setImage(image, forIndex: index, at: at)
     }
     
     func requestMoreHeroes() {

@@ -10,8 +10,12 @@ import UIKit
 import SnapKit
 
 protocol HomeViewScreenProtocol {
-    func saveImage(_ image:UIImage, forIndex index: Int)
+    func saveImage(_ image:UIImage, forIndex index: Int, at: HomeModels.HomePersistance)
     func requestMoreHeroes()
+}
+
+protocol HomeViewScreenPersistanceProtocol {
+    func imageDidLoad(_ image:UIImage, hero: HomeModels.HomeViewModel.Hero)
 }
 
 class HomeViewScreen: UIView {
@@ -127,14 +131,19 @@ extension HomeViewScreen: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-//MARK: - HomeTableViewCellProtocol
-extension HomeViewScreen: HomeTableViewCellProtocol {
-    func imageDidLoad(_ image: UIImage, hero: HomeModels.HomeViewModel.Hero) {
-        if let i = model.tableView.firstIndex(where: { $0.id == hero.id }) {
-            model.tableView[i].image = image
-            delegate?.saveImage(image, forIndex: i)
+//MARK: - HomeViewScreenPersistanceProtocol
+extension HomeViewScreen: HomeViewScreenPersistanceProtocol {
+    func imageDidLoad(_ image:UIImage, hero: HomeModels.HomeViewModel.Hero) {
+        if let i = model.carroussel.firstIndex(where: { $0.id == hero.id }) {
+            model.carroussel[i].image = image
+            delegate?.saveImage(image, forIndex: i, at: .carroussel)
+        }
+        if let j = model.tableView.firstIndex(where: { $0.id == hero.id }) {
+            model.tableView[j].image = image
+            delegate?.saveImage(image, forIndex: j, at: .tableView)
         }
     }
+
 }
 
 //MARK: - ScrollViewDelegate
