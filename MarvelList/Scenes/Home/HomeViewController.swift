@@ -45,7 +45,11 @@ class HomeViewController: UIViewController {
             interactor?.getHeroes()
         }
     }
-
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
 }
 
 extension HomeViewController: ViewCodeProtocol {

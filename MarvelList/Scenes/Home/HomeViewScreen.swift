@@ -40,7 +40,11 @@ class HomeViewScreen: UIView {
     
     lazy var activityIndicator: UIActivityIndicatorView = {
         let activity = UIActivityIndicatorView()
-        activity.style = .large
+        if #available(iOS 13.0, *) {
+            activity.style = .large
+        } else {
+            activity.style = .gray
+        }
         activity.isHidden = true
         return activity
     }()
