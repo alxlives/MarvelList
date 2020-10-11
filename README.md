@@ -37,9 +37,18 @@ enum Constants {
 ```console
 $ carthage update
 ```
-Then manually add the generated ```.framework``` builds to the project.
+Then manually add the generated ```.framework``` builds to the project. 
+
+For now, we are embeding the libraries  in   ``` Project > Targets > Frameworks, Libraries, and Embedded Content ```, using the option  ``` Embed Without Signing ```
+
+![](screenshots/img4.png)
 
 ## Libraries
 - [Snapkit](https://github.com/SnapKit/SnapKit)
 - [SDWebImage](https://github.com/rs/SDWebImage)
 - [lottie](https://github.com/airbnb/lottie-ios)
+
+## Project Roadmap
+
+- To generate a  ```.sh ``` script for automatically embed the libraries
+- To create a modal Details screen using - [Hero](https://github.com/HeroTransitions/Hero) as image transition
