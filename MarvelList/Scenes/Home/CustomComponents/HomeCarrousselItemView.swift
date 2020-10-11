@@ -33,7 +33,8 @@ class HomeCarrousselItemView: UIView {
         lbl.textAlignment = .center
         lbl.numberOfLines = 0
         lbl.text = hero.name
-        lbl.layer.shadowColor = UIColor.white.cgColor
+        lbl.textColor = Constants.Color.labelColor
+        lbl.layer.shadowColor = Constants.Color.glowColor.cgColor
         lbl.layer.shadowOffset = .zero
         lbl.layer.shadowRadius = 5.0
         lbl.layer.shadowOpacity = 1.0
@@ -87,6 +88,14 @@ extension HomeCarrousselItemView {
                 self.imgView.alpha = 1
             })
         })
+    }
+    
+    override open func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        if #available(iOS 13, *), self.traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
+            lblName.layer.shadowColor = Constants.Color.glowColor.cgColor
+        }
     }
 
 }

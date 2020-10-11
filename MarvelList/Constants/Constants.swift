@@ -18,4 +18,27 @@ enum Constants {
         static let height:CGFloat = 200.0
         static let time = 3.0
     }
+    enum Color {
+        static let glowColor: UIColor = {
+            if #available(iOS 13.0, *) {
+                return UIColor.systemBackground
+             } else {
+                return UIColor.white
+             }
+        }()
+        static let backgroundColor: UIColor = {
+            if #available(iOS 13.0, *) {
+                return UIColor.systemBackground
+             } else {
+                return UIColor.white
+             }
+        }()
+        static let labelColor: UIColor = {
+            if #available(iOS 13.0, *) {
+                return UIColor.label
+             } else {
+                return UIColor.white
+             }
+        }()
+    }
 }
