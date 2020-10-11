@@ -65,7 +65,7 @@ extension HomeViewController: ViewCodeProtocol {
     func setupConstraints() { }
     
     func aditionalSetup() {
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = Constants.Color.backgroundColor
     }
     
     func setupViewScreen() {

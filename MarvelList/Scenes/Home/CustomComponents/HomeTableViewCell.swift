@@ -23,6 +23,7 @@ class HomeTableViewCell: UITableViewCell {
     private lazy var lblName: UILabel = {
         let lbl = UILabel()
         lbl.numberOfLines = 0
+        lbl.textColor = Constants.Color.labelColor
         return lbl
     }()
     
@@ -64,7 +65,7 @@ extension HomeTableViewCell: ViewCodeProtocol {
     }
     
     func aditionalSetup() {
-        self.backgroundColor = .white
+        self.backgroundColor = Constants.Color.backgroundColor
         lblName.text = hero?.name
     }
 }

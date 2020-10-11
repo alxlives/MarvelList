@@ -37,7 +37,11 @@ class CustomLoader: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .white
+        if #available(iOS 13.0, *) {
+             self.backgroundColor = .systemBackground
+         } else {
+             self.backgroundColor = .white
+         }
         setupView()
     }
     
