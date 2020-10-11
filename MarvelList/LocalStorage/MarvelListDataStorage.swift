@@ -12,7 +12,7 @@ import UIKit
 class MarvelListDataStorage {
     
    //MARK: - Properties
-    let context: NSManagedObjectContext? = {
+    var context: NSManagedObjectContext? = {
         guard let appDelegate =
           UIApplication.shared.delegate as? AppDelegate else {
           return nil

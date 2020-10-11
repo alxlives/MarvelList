@@ -9,7 +9,12 @@
 /* Begin PBXBuildFile section */
 		172CE395252CFAA0009AC42D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172CE394252CFAA0009AC42D /* AppDelegate.swift */; };
 		172CE3A1252CFAA1009AC42D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 172CE39F252CFAA1009AC42D /* LaunchScreen.storyboard */; };
-		172CE3AC252CFAA2009AC42D /* MarvelListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172CE3AB252CFAA2009AC42D /* MarvelListTests.swift */; };
+		1730DA61253382190045B9EA /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17394351252F498F00A7D7BA /* UIImageView.swift */; };
+		1730DA622533821B0045B9EA /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1735D0772530EDAC002DE9A0 /* UITableViewCell.swift */; };
+		1730DA632533821F0045B9EA /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17394357252F610800A7D7BA /* UIScrollView.swift */; };
+		1730DA64253382320045B9EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172CE394252CFAA0009AC42D /* AppDelegate.swift */; };
+		1730DA66253382DB0045B9EA /* HomeViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1730DA65253382DB0045B9EA /* HomeViewControllerTest.swift */; };
+		1730DA68253387B20045B9EA /* HomeInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1730DA67253387B20045B9EA /* HomeInteractorTest.swift */; };
 		1735D0732530B5BB002DE9A0 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1739435F2530B40400A7D7BA /* SDWebImage.framework */; };
 		1735D0742530B5BB002DE9A0 /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1739435F2530B40400A7D7BA /* SDWebImage.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1735D0762530EBF3002DE9A0 /* CustomLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1735D0752530EBF3002DE9A0 /* CustomLoader.swift */; };
@@ -20,6 +25,30 @@
 		1735D0832530FBB7002DE9A0 /* hero-on-the-way.json in Resources */ = {isa = PBXBuildFile; fileRef = 1735D0822530FBB7002DE9A0 /* hero-on-the-way.json */; };
 		1735D09225323552002DE9A0 /* MarvelList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1735D09025323552002DE9A0 /* MarvelList.xcdatamodeld */; };
 		1735D09425323596002DE9A0 /* MarvelListDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1735D09325323596002DE9A0 /* MarvelListDataStorage.swift */; };
+		1735D09B25337A17002DE9A0 /* HomeInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1735D09A25337A17002DE9A0 /* HomeInteractorMock.swift */; };
+		1735D09D25337A30002DE9A0 /* HomePresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1735D09C25337A30002DE9A0 /* HomePresenterMock.swift */; };
+		1735D09F25337A41002DE9A0 /* HomeViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1735D09E25337A41002DE9A0 /* HomeViewControllerMock.swift */; };
+		1735D0A125337A50002DE9A0 /* HomeWorkerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1735D0A025337A50002DE9A0 /* HomeWorkerMock.swift */; };
+		1735D0A225337A90002DE9A0 /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176E7FC6252CFE74007BDCAD /* HomeFactory.swift */; };
+		1735D0A325337A90002DE9A0 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176E7FC4252CFE67007BDCAD /* HomeInteractor.swift */; };
+		1735D0A425337A90002DE9A0 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176E7FBC252CFE2F007BDCAD /* HomePresenter.swift */; };
+		1735D0A525337A90002DE9A0 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176E7FB8252CFE11007BDCAD /* HomeRouter.swift */; };
+		1735D0A625337A90002DE9A0 /* HomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176E7FBA252CFE1D007BDCAD /* HomeWorker.swift */; };
+		1735D0A725337A90002DE9A0 /* HomeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176E7FC0252CFE49007BDCAD /* HomeModels.swift */; };
+		1735D0A825337A90002DE9A0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176E7FBE252CFE3C007BDCAD /* HomeViewController.swift */; };
+		1735D0A925337A90002DE9A0 /* HomeViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1739435D2530A02C00A7D7BA /* HomeViewScreen.swift */; };
+		1735D0AA25337A94002DE9A0 /* HomeCarrousselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17496D26252DFF4100957667 /* HomeCarrousselView.swift */; };
+		1735D0AB25337A94002DE9A0 /* HomeCarrousselItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17496D2A252E017500957667 /* HomeCarrousselItemView.swift */; };
+		1735D0AC25337A94002DE9A0 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17394353252F5C3800A7D7BA /* HomeTableViewCell.swift */; };
+		1735D0AD25337AA4002DE9A0 /* MarvelList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1735D09025323552002DE9A0 /* MarvelList.xcdatamodeld */; };
+		1735D0AE25337AA7002DE9A0 /* MarvelListDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1735D09325323596002DE9A0 /* MarvelListDataStorage.swift */; };
+		1735D0AF25337C01002DE9A0 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17523A5F252D099B00511B45 /* NetworkError.swift */; };
+		1735D0B025337C01002DE9A0 /* NetworkEncription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17496D23252DF49D00957667 /* NetworkEncription.swift */; };
+		1735D0B125337C01002DE9A0 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17523A63252D0B8800511B45 /* NetworkRequest.swift */; };
+		1735D0B225337C01002DE9A0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17523A61252D09F100511B45 /* NetworkManager.swift */; };
+		1735D0B325337C04002DE9A0 /* ViewCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1739435B253092C700A7D7BA /* ViewCodeProtocol.swift */; };
+		1735D0B425337C04002DE9A0 /* CustomLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1735D0752530EBF3002DE9A0 /* CustomLoader.swift */; };
+		1735D0B625337EC8002DE9A0 /* HomePresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1735D0B525337EC8002DE9A0 /* HomePresenterTest.swift */; };
 		17394352252F498F00A7D7BA /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17394351252F498F00A7D7BA /* UIImageView.swift */; };
 		17394354252F5C3800A7D7BA /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17394353252F5C3800A7D7BA /* HomeTableViewCell.swift */; };
 		17394358252F610800A7D7BA /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17394357252F610800A7D7BA /* UIScrollView.swift */; };
@@ -75,8 +104,9 @@
 		172CE3A0252CFAA1009AC42D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		172CE3A2252CFAA1009AC42D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		172CE3A7252CFAA2009AC42D /* MarvelListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		172CE3AB252CFAA2009AC42D /* MarvelListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListTests.swift; sourceTree = "<group>"; };
 		172CE3AD252CFAA2009AC42D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1730DA65253382DB0045B9EA /* HomeViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTest.swift; sourceTree = "<group>"; };
+		1730DA67253387B20045B9EA /* HomeInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorTest.swift; sourceTree = "<group>"; };
 		1735D0752530EBF3002DE9A0 /* CustomLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoader.swift; sourceTree = "<group>"; };
 		1735D0772530EDAC002DE9A0 /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 		1735D0792530EF63002DE9A0 /* Lottie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lottie.framework; path = Carthage/Build/iOS/Lottie.framework; sourceTree = SOURCE_ROOT; };
@@ -84,6 +114,11 @@
 		1735D0822530FBB7002DE9A0 /* hero-on-the-way.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "hero-on-the-way.json"; sourceTree = "<group>"; };
 		1735D09125323552002DE9A0 /* MarvelList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MarvelList.xcdatamodel; sourceTree = "<group>"; };
 		1735D09325323596002DE9A0 /* MarvelListDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListDataStorage.swift; sourceTree = "<group>"; };
+		1735D09A25337A17002DE9A0 /* HomeInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorMock.swift; sourceTree = "<group>"; };
+		1735D09C25337A30002DE9A0 /* HomePresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterMock.swift; sourceTree = "<group>"; };
+		1735D09E25337A41002DE9A0 /* HomeViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerMock.swift; sourceTree = "<group>"; };
+		1735D0A025337A50002DE9A0 /* HomeWorkerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorkerMock.swift; sourceTree = "<group>"; };
+		1735D0B525337EC8002DE9A0 /* HomePresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTest.swift; sourceTree = "<group>"; };
 		17394351252F498F00A7D7BA /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		17394353252F5C3800A7D7BA /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		17394357252F610800A7D7BA /* UIScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
@@ -166,7 +201,7 @@
 		172CE3AA252CFAA2009AC42D /* MarvelListTests */ = {
 			isa = PBXGroup;
 			children = (
-				172CE3AB252CFAA2009AC42D /* MarvelListTests.swift */,
+				1735D095253379DB002DE9A0 /* Home */,
 				172CE3AD252CFAA2009AC42D /* Info.plist */,
 			);
 			path = MarvelListTests;
@@ -188,6 +223,52 @@
 				1735D09325323596002DE9A0 /* MarvelListDataStorage.swift */,
 			);
 			path = LocalStorage;
+			sourceTree = "<group>";
+		};
+		1735D095253379DB002DE9A0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				1735D096253379DB002DE9A0 /* Mock */,
+				1735D097253379DB002DE9A0 /* Presenter */,
+				1735D098253379DB002DE9A0 /* View */,
+				1735D099253379DB002DE9A0 /* Interactor */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		1735D096253379DB002DE9A0 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				1735D09A25337A17002DE9A0 /* HomeInteractorMock.swift */,
+				1735D09C25337A30002DE9A0 /* HomePresenterMock.swift */,
+				1735D09E25337A41002DE9A0 /* HomeViewControllerMock.swift */,
+				1735D0A025337A50002DE9A0 /* HomeWorkerMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		1735D097253379DB002DE9A0 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				1735D0B525337EC8002DE9A0 /* HomePresenterTest.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1735D098253379DB002DE9A0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1730DA65253382DB0045B9EA /* HomeViewControllerTest.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1735D099253379DB002DE9A0 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				1730DA67253387B20045B9EA /* HomeInteractorTest.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		17394350252F496C00A7D7BA /* Extensions */ = {
@@ -319,6 +400,7 @@
 					};
 					172CE3A6252CFAA2009AC42D = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1100;
 						TestTargetID = 172CE390252CFAA0009AC42D;
 					};
 				};
@@ -417,7 +499,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				172CE3AC252CFAA2009AC42D /* MarvelListTests.swift in Sources */,
+				1735D0AA25337A94002DE9A0 /* HomeCarrousselView.swift in Sources */,
+				1735D0AE25337AA7002DE9A0 /* MarvelListDataStorage.swift in Sources */,
+				1735D0B425337C04002DE9A0 /* CustomLoader.swift in Sources */,
+				1735D0B625337EC8002DE9A0 /* HomePresenterTest.swift in Sources */,
+				1730DA64253382320045B9EA /* AppDelegate.swift in Sources */,
+				1735D0A425337A90002DE9A0 /* HomePresenter.swift in Sources */,
+				1735D0B225337C01002DE9A0 /* NetworkManager.swift in Sources */,
+				1730DA66253382DB0045B9EA /* HomeViewControllerTest.swift in Sources */,
+				1730DA61253382190045B9EA /* UIImageView.swift in Sources */,
+				1735D0AD25337AA4002DE9A0 /* MarvelList.xcdatamodeld in Sources */,
+				1735D0A625337A90002DE9A0 /* HomeWorker.swift in Sources */,
+				1735D0A125337A50002DE9A0 /* HomeWorkerMock.swift in Sources */,
+				1735D0A925337A90002DE9A0 /* HomeViewScreen.swift in Sources */,
+				1735D0A225337A90002DE9A0 /* HomeFactory.swift in Sources */,
+				1735D0AC25337A94002DE9A0 /* HomeTableViewCell.swift in Sources */,
+				1730DA68253387B20045B9EA /* HomeInteractorTest.swift in Sources */,
+				1735D09B25337A17002DE9A0 /* HomeInteractorMock.swift in Sources */,
+				1735D0A325337A90002DE9A0 /* HomeInteractor.swift in Sources */,
+				1735D0A725337A90002DE9A0 /* HomeModels.swift in Sources */,
+				1735D0A825337A90002DE9A0 /* HomeViewController.swift in Sources */,
+				1735D0A525337A90002DE9A0 /* HomeRouter.swift in Sources */,
+				1735D0B125337C01002DE9A0 /* NetworkRequest.swift in Sources */,
+				1735D09D25337A30002DE9A0 /* HomePresenterMock.swift in Sources */,
+				1735D0B325337C04002DE9A0 /* ViewCodeProtocol.swift in Sources */,
+				1730DA632533821F0045B9EA /* UIScrollView.swift in Sources */,
+				1735D0B025337C01002DE9A0 /* NetworkEncription.swift in Sources */,
+				1735D0AF25337C01002DE9A0 /* NetworkError.swift in Sources */,
+				1735D09F25337A41002DE9A0 /* HomeViewControllerMock.swift in Sources */,
+				1735D0AB25337A94002DE9A0 /* HomeCarrousselItemView.swift in Sources */,
+				1730DA622533821B0045B9EA /* UITableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,13 +717,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = MarvelListTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -620,6 +732,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.MarvelListTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarvelList.app/MarvelList";
@@ -631,13 +744,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = MarvelListTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -23,11 +23,13 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStoreProtocol {
     //MARK: - Properties
     private var presenter: HomePresentationLogic
     private var worker: HomeWorkerProtocol
-
+    var dataStorage = MarvelListDataStorage()
+    
     //MARK: - DataStore
     var currentOffset: Int = 0
     var total: Int = 0
     var homeViewModel: HomeModels.HomeViewModel?
+    
     
     //MARK: - Init
     init(presenter: HomePresentationLogic, worker: HomeWorkerProtocol) {
@@ -40,7 +42,7 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStoreProtocol {
         if homeViewModel == nil {
             presenter.presentLoader()
             //MARK: - Core Data
-            if let heroesList = MarvelListDataStorage().retreiveHeroes() {
+            if let heroesList = dataStorage.retreiveHeroes() {
                 if heroesList.count > 0 {
                     currentOffset = heroesList.count
                     presenter.presentLocalStorage(heroes: heroesList, hasMore: MarvelListDataStorage().hasMore())
@@ -76,7 +78,7 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStoreProtocol {
         heroesArray.append(contentsOf: model.carroussel)
         heroesArray.append(contentsOf: model.tableView)
         let hasMore: Bool = self.currentOffset < self.total
-        MarvelListDataStorage().save(heroes: heroesArray, hasMore: hasMore)
+        dataStorage.save(heroes: heroesArray, hasMore: hasMore)
     }
     
 }
