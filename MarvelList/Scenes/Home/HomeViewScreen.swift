@@ -20,7 +20,7 @@ protocol HomeViewScreenPersistanceProtocol {
 
 class HomeViewScreen: UIView {
     //MARK: - Constants
-    private let carrousselHeight:CGFloat = 200.0
+    private let carrousselHeight = Constants.Carroussel.height
     
     //MARK: - Variables
     var model: HomeModels.HomeViewModel

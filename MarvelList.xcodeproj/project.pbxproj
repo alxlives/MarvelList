@@ -15,6 +15,7 @@
 		1730DA64253382320045B9EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172CE394252CFAA0009AC42D /* AppDelegate.swift */; };
 		1730DA66253382DB0045B9EA /* HomeViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1730DA65253382DB0045B9EA /* HomeViewControllerTest.swift */; };
 		1730DA68253387B20045B9EA /* HomeInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1730DA67253387B20045B9EA /* HomeInteractorTest.swift */; };
+		1730DA6B25338F100045B9EA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1730DA6A25338F100045B9EA /* Constants.swift */; };
 		1735D0732530B5BB002DE9A0 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1739435F2530B40400A7D7BA /* SDWebImage.framework */; };
 		1735D0742530B5BB002DE9A0 /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1739435F2530B40400A7D7BA /* SDWebImage.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1735D0762530EBF3002DE9A0 /* CustomLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1735D0752530EBF3002DE9A0 /* CustomLoader.swift */; };
@@ -107,6 +108,7 @@
 		172CE3AD252CFAA2009AC42D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1730DA65253382DB0045B9EA /* HomeViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTest.swift; sourceTree = "<group>"; };
 		1730DA67253387B20045B9EA /* HomeInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorTest.swift; sourceTree = "<group>"; };
+		1730DA6A25338F100045B9EA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1735D0752530EBF3002DE9A0 /* CustomLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoader.swift; sourceTree = "<group>"; };
 		1735D0772530EDAC002DE9A0 /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 		1735D0792530EF63002DE9A0 /* Lottie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lottie.framework; path = Carthage/Build/iOS/Lottie.framework; sourceTree = SOURCE_ROOT; };
@@ -186,6 +188,7 @@
 			children = (
 				172CE394252CFAA0009AC42D /* AppDelegate.swift */,
 				1735D07D2530F5CE002DE9A0 /* Assets */,
+				1730DA6925338EF30045B9EA /* Constants */,
 				1735D08C2532352F002DE9A0 /* LocalStorage */,
 				17496D31252F3DBE00957667 /* Frameworks */,
 				17394350252F496C00A7D7BA /* Extensions */,
@@ -205,6 +208,14 @@
 				172CE3AD252CFAA2009AC42D /* Info.plist */,
 			);
 			path = MarvelListTests;
+			sourceTree = "<group>";
+		};
+		1730DA6925338EF30045B9EA /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				1730DA6A25338F100045B9EA /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		1735D07D2530F5CE002DE9A0 /* Assets */ = {
@@ -492,6 +503,7 @@
 				17394354252F5C3800A7D7BA /* HomeTableViewCell.swift in Sources */,
 				17523A62252D09F100511B45 /* NetworkManager.swift in Sources */,
 				1739435E2530A02C00A7D7BA /* HomeViewScreen.swift in Sources */,
+				1730DA6B25338F100045B9EA /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
