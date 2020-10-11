@@ -56,18 +56,15 @@ struct HomeModels {
 
 class HomeRequest: NetworkRequest {
     internal var url: String
-    private let baseURL = "https://gateway.marvel.com/v1/public/characters"
-    private let publicKey = "d45326ff4b90a16ccedce23966fa08db"
-    private let privateKey = "95eb75a248dce98a06fef346e235ab9aa1721d32"
     
     init (offset:Int) {
         let offset = String(offset)
         let formatter = DateFormatter()
         formatter.dateFormat = "dd-MM-yyyy-HH-mm-ss"
         let ts = formatter.string(from: Date())
-        let hash = NetworkEncription.MD5(ts+privateKey+publicKey) ?? ""
-        let url = baseURL + "?ts=" + ts + "&apikey=" + publicKey + "&hash=" + hash + "&offset=" + offset
-        
+        let api = Constants.API.self
+        let hash = NetworkEncription.MD5(ts+api.privateKey+api.publicKey) ?? ""
+        let url = api.baseURL + "?ts=" + ts + "&apikey=" + api.publicKey + "&hash=" + hash + "&offset=" + offset
         self.url = url
     }
     

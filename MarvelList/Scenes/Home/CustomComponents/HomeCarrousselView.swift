@@ -11,7 +11,7 @@ import SnapKit
 
 class HomeCarrousselView: UIView {
     //MARK: - Constants
-    private let carrousselTime = 3.0
+    private let carrousselTime = Constants.Carroussel.time
     var delegate: HomeViewScreenPersistanceProtocol?
     
     //MARK: - Properties
