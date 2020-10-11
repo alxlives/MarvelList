@@ -2,7 +2,11 @@
 [![MKT](https://img.shields.io/badge/language-Swift-orange.svg)](https://img.shields.io/badge/language-Swift-orange.svg) [![MKT](https://img.shields.io/badge/platform-iOS-lightgrey.svg)](https://img.shields.io/badge/platform-iOS-lightgrey.svg)
 # Description
 See all the Marvel heroes by alphabetical order!
+|   |   |   |
+|---|---|---|
 |![](screenshots/img1.png)|![](screenshots/img2.png)|![](screenshots/img3.png)|
+|   |   |   |
+
 # Requirements
 -   Xcode 11.0+
 -   iOS 11.0+
