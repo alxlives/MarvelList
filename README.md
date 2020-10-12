@@ -51,4 +51,5 @@ For now, we are embeding the libraries  in   ``` Project > Targets > Frameworks,
 ## Project Roadmap
 
 - To generate a  ```.sh ``` script for automatically embed the libraries
+- To find a lottie loading animation to show dragging progress until reload the tableview
 - To create a modal Details screen using - [Hero](https://github.com/HeroTransitions/Hero) as image transition
