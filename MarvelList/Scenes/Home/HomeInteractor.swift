@@ -71,7 +71,7 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStoreProtocol {
     }
     
     func saveDataToLocalStorage() {
-        guard let model = homeViewModel else {
+        guard let model = homeViewModel, total > 0 else {
             return
         }
         var heroesArray: [HomeModels.HomeViewModel.Hero] = []
