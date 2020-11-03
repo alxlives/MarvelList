@@ -43,6 +43,7 @@ class HomeInteractorTest: XCTestCase {
 
         interactor?.homeViewModel = viewModel
         interactor?.dataStorage.context = contextForTests()
+        interactor?.total = viewModel.carroussel.count + viewModel.tableView.count
         interactor?.saveDataToLocalStorage()
         
         interactor?.homeViewModel = nil
