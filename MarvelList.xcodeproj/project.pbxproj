@@ -45,11 +45,15 @@
 		1735D0AE25337AA7002DE9A0 /* MarvelListDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1735D09325323596002DE9A0 /* MarvelListDataStorage.swift */; };
 		1735D0AF25337C01002DE9A0 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17523A5F252D099B00511B45 /* NetworkError.swift */; };
 		1735D0B025337C01002DE9A0 /* NetworkEncription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17496D23252DF49D00957667 /* NetworkEncription.swift */; };
-		1735D0B125337C01002DE9A0 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17523A63252D0B8800511B45 /* NetworkRequest.swift */; };
 		1735D0B225337C01002DE9A0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17523A61252D09F100511B45 /* NetworkManager.swift */; };
 		1735D0B325337C04002DE9A0 /* ViewCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1739435B253092C700A7D7BA /* ViewCodeProtocol.swift */; };
 		1735D0B425337C04002DE9A0 /* CustomLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1735D0752530EBF3002DE9A0 /* CustomLoader.swift */; };
 		1735D0B625337EC8002DE9A0 /* HomePresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1735D0B525337EC8002DE9A0 /* HomePresenterTest.swift */; };
+		17366A242551951200CC2178 /* NetworkLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17366A232551951200CC2178 /* NetworkLog.swift */; };
+		17366A252551951200CC2178 /* NetworkLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17366A232551951200CC2178 /* NetworkLog.swift */; };
+		17366A272551A4F100CC2178 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17366A262551A4F100CC2178 /* NetworkRequest.swift */; };
+		17366A282551A4F100CC2178 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17366A262551A4F100CC2178 /* NetworkRequest.swift */; };
+		17366A292551A8B900CC2178 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1730DA6A25338F100045B9EA /* Constants.swift */; };
 		17394352252F498F00A7D7BA /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17394351252F498F00A7D7BA /* UIImageView.swift */; };
 		17394354252F5C3800A7D7BA /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17394353252F5C3800A7D7BA /* HomeTableViewCell.swift */; };
 		17394358252F610800A7D7BA /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17394357252F610800A7D7BA /* UIScrollView.swift */; };
@@ -60,7 +64,6 @@
 		17496D2B252E017500957667 /* HomeCarrousselItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17496D2A252E017500957667 /* HomeCarrousselItemView.swift */; };
 		17523A60252D099B00511B45 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17523A5F252D099B00511B45 /* NetworkError.swift */; };
 		17523A62252D09F100511B45 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17523A61252D09F100511B45 /* NetworkManager.swift */; };
-		17523A64252D0B8800511B45 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17523A63252D0B8800511B45 /* NetworkRequest.swift */; };
 		176E7FB9252CFE11007BDCAD /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176E7FB8252CFE11007BDCAD /* HomeRouter.swift */; };
 		176E7FBB252CFE1D007BDCAD /* HomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176E7FBA252CFE1D007BDCAD /* HomeWorker.swift */; };
 		176E7FBD252CFE2F007BDCAD /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176E7FBC252CFE2F007BDCAD /* HomePresenter.swift */; };
@@ -121,6 +124,8 @@
 		1735D09E25337A41002DE9A0 /* HomeViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerMock.swift; sourceTree = "<group>"; };
 		1735D0A025337A50002DE9A0 /* HomeWorkerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorkerMock.swift; sourceTree = "<group>"; };
 		1735D0B525337EC8002DE9A0 /* HomePresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTest.swift; sourceTree = "<group>"; };
+		17366A232551951200CC2178 /* NetworkLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLog.swift; sourceTree = "<group>"; };
+		17366A262551A4F100CC2178 /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		17394351252F498F00A7D7BA /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		17394353252F5C3800A7D7BA /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		17394357252F610800A7D7BA /* UIScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
@@ -133,7 +138,6 @@
 		17496D32252F3DC900957667 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = SOURCE_ROOT; };
 		17523A5F252D099B00511B45 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		17523A61252D09F100511B45 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		17523A63252D0B8800511B45 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		176E7FB8252CFE11007BDCAD /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		176E7FBA252CFE1D007BDCAD /* HomeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorker.swift; sourceTree = "<group>"; };
 		176E7FBC252CFE2F007BDCAD /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
@@ -325,8 +329,9 @@
 			isa = PBXGroup;
 			children = (
 				17523A5F252D099B00511B45 /* NetworkError.swift */,
+				17366A232551951200CC2178 /* NetworkLog.swift */,
 				17496D23252DF49D00957667 /* NetworkEncription.swift */,
-				17523A63252D0B8800511B45 /* NetworkRequest.swift */,
+				17366A262551A4F100CC2178 /* NetworkRequest.swift */,
 				17523A61252D09F100511B45 /* NetworkManager.swift */,
 			);
 			path = Network;
@@ -496,14 +501,15 @@
 				1735D09225323552002DE9A0 /* MarvelList.xcdatamodeld in Sources */,
 				17394352252F498F00A7D7BA /* UIImageView.swift in Sources */,
 				176E7FBB252CFE1D007BDCAD /* HomeWorker.swift in Sources */,
+				17366A242551951200CC2178 /* NetworkLog.swift in Sources */,
 				176E7FBF252CFE3C007BDCAD /* HomeViewController.swift in Sources */,
 				17523A60252D099B00511B45 /* NetworkError.swift in Sources */,
-				17523A64252D0B8800511B45 /* NetworkRequest.swift in Sources */,
 				17496D2B252E017500957667 /* HomeCarrousselItemView.swift in Sources */,
 				17394354252F5C3800A7D7BA /* HomeTableViewCell.swift in Sources */,
 				17523A62252D09F100511B45 /* NetworkManager.swift in Sources */,
 				1739435E2530A02C00A7D7BA /* HomeViewScreen.swift in Sources */,
 				1730DA6B25338F100045B9EA /* Constants.swift in Sources */,
+				17366A272551A4F100CC2178 /* NetworkRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,11 +521,14 @@
 				1735D0AE25337AA7002DE9A0 /* MarvelListDataStorage.swift in Sources */,
 				1735D0B425337C04002DE9A0 /* CustomLoader.swift in Sources */,
 				1735D0B625337EC8002DE9A0 /* HomePresenterTest.swift in Sources */,
+				17366A282551A4F100CC2178 /* NetworkRequest.swift in Sources */,
 				1730DA64253382320045B9EA /* AppDelegate.swift in Sources */,
 				1735D0A425337A90002DE9A0 /* HomePresenter.swift in Sources */,
+				17366A292551A8B900CC2178 /* Constants.swift in Sources */,
 				1735D0B225337C01002DE9A0 /* NetworkManager.swift in Sources */,
 				1730DA66253382DB0045B9EA /* HomeViewControllerTest.swift in Sources */,
 				1730DA61253382190045B9EA /* UIImageView.swift in Sources */,
+				17366A252551951200CC2178 /* NetworkLog.swift in Sources */,
 				1735D0AD25337AA4002DE9A0 /* MarvelList.xcdatamodeld in Sources */,
 				1735D0A625337A90002DE9A0 /* HomeWorker.swift in Sources */,
 				1735D0A125337A50002DE9A0 /* HomeWorkerMock.swift in Sources */,
@@ -532,7 +541,6 @@
 				1735D0A725337A90002DE9A0 /* HomeModels.swift in Sources */,
 				1735D0A825337A90002DE9A0 /* HomeViewController.swift in Sources */,
 				1735D0A525337A90002DE9A0 /* HomeRouter.swift in Sources */,
-				1735D0B125337C01002DE9A0 /* NetworkRequest.swift in Sources */,
 				1735D09D25337A30002DE9A0 /* HomePresenterMock.swift in Sources */,
 				1735D0B325337C04002DE9A0 /* ViewCodeProtocol.swift in Sources */,
 				1730DA632533821F0045B9EA /* UIScrollView.swift in Sources */,
